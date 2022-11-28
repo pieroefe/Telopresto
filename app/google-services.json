@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "911127303508",
+    "project_id": "telopresto-13f26",
+    "storage_bucket": "telopresto-13f26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911127303508:android:a54dc032d22445d8cf24c1",
+        "android_client_info": {
+          "package_name": "com.example.telopresto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911127303508-ss3jjgtnri5nthethm0792e7go90p617.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKDP3BwbMimQpDD57Sj7ogEAYIDnYf7CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911127303508-ss3jjgtnri5nthethm0792e7go90p617.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
