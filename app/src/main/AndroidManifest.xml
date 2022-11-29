@@ -13,6 +13,13 @@
         android:theme="@style/Theme.Telopresto"
         tools:targetApi="31">
         <activity
+            android:name=".Cliente_solicitudes_detalles"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Cliente_reserva"
             android:exported="false">
             <meta-data
