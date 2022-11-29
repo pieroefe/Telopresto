@@ -7,14 +7,14 @@
     tools:context=".editar_equipo_usuarioti">
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/editarIncluyeDispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber4"
+        app:layout_constraintBottom_toTopOf="@+id/editarStockDispositivo"
         tools:layout_editor_absoluteX="153dp" />
 
     <TextView
@@ -22,28 +22,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Caracteristicas:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName8"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName8"
+        app:layout_constraintBottom_toBottomOf="@+id/editarCaracteristicaDispositivo"
+        app:layout_constraintTop_toTopOf="@+id/editarCaracteristicaDispositivo"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="43dp" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/editarMarcaDispositivo"
         android:layout_width="222dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName8"
+        app:layout_constraintBottom_toTopOf="@+id/editarCaracteristicaDispositivo"
         tools:layout_editor_absoluteX="145dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/editarNombreDispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ems="8"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/spinner2"
+        app:layout_constraintBottom_toTopOf="@+id/editarMarcaDispositivo"
         tools:layout_editor_absoluteX="204dp" />
 
     <TextView
@@ -51,35 +51,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stock:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber4"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber4"
+        app:layout_constraintBottom_toBottomOf="@+id/editarStockDispositivo"
+        app:layout_constraintTop_toTopOf="@+id/editarStockDispositivo"
         tools:layout_editor_absoluteX="52dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/editarCaracteristicaDispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName9"
+        app:layout_constraintBottom_toTopOf="@+id/editarIncluyeDispositivo"
         tools:layout_editor_absoluteX="176dp" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn_editar_dispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="16dp"
         android:text="Editar"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/editar_cancelar_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/editar_cancelar_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
@@ -95,8 +95,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre del Dispositivo: "
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName7"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName7"
+        app:layout_constraintBottom_toBottomOf="@+id/editarNombreDispositivo"
+        app:layout_constraintTop_toTopOf="@+id/editarNombreDispositivo"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="32dp" />
 
@@ -105,19 +105,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Incluye:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName9"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName9"
+        app:layout_constraintBottom_toBottomOf="@+id/editarIncluyeDispositivo"
+        app:layout_constraintTop_toTopOf="@+id/editarIncluyeDispositivo"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="52dp" />
 
     <EditText
-        android:id="@+id/editTextNumber4"
+        android:id="@+id/editarStockDispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintBottom_toTopOf="@+id/btn_editar_dispositivo"
         tools:layout_editor_absoluteX="162dp" />
 
     <TextView
@@ -134,11 +134,11 @@
         tools:layout_editor_absoluteY="36dp" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/image_view_dispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName7"
+        app:layout_constraintBottom_toTopOf="@+id/editarNombreDispositivo"
         tools:layout_editor_absoluteX="141dp"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -147,8 +147,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Marca:"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner2"
-        app:layout_constraintTop_toTopOf="@+id/spinner2"
+        app:layout_constraintBottom_toBottomOf="@+id/editarMarcaDispositivo"
+        app:layout_constraintTop_toTopOf="@+id/editarMarcaDispositivo"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="57dp" />
 
