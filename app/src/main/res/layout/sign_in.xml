@@ -3,33 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".signIn">
 
     <TextView
-        android:id="@+id/inicio_sesion_title"
+        android:id="@+id/Register_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Iniciar sesión"
+        android:text="Registrarse"
         android:textAlignment="center"
         android:textColor="#2F2C2C"
         android:textSize="29sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:fontFamily="@font/inter" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageInicio"
-        android:layout_width="247dp"
-        android:layout_height="247dp"
+        android:id="@+id/imageRegistro"
+        android:layout_width="195dp"
+        android:layout_height="153dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inicio_sesion_title"
-        app:srcCompat="@drawable/cuate" />
+        app:layout_constraintTop_toBottomOf="@+id/Register_title"
+        app:srcCompat="@drawable/pana" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/correoInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="259dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Correo PUCP"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageRegistro"
+        app:startIconDrawable="@drawable/ic_mail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/correoInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/bordes_redondos"
+            android:fontFamily="@font/inter"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textSize="13sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/codigoInputLayout"
@@ -37,7 +63,6 @@
         android:layout_width="259dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:hint="Código PUCP"
         app:counterEnabled="true"
@@ -45,7 +70,7 @@
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageInicio"
+        app:layout_constraintTop_toBottomOf="@+id/correoInputLayout"
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -60,12 +85,38 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmpasswordInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="259dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Confirmar contraseña"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+        app:startIconDrawable="@drawable/ic_key">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmpasswordInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/bordes_redondos"
+            android:fontFamily="@font/inter"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="13sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="259dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="32dp"
         android:hint="Contraseña"
         app:endIconMode="password_toggle"
@@ -86,65 +137,38 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/iniciarSesionBtn"
+        android:id="@+id/registroBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#2F2C2C"
         android:fontFamily="@font/inter_semibold"
-        android:text="Iniciar Sesión"
+        android:text="Registrarse"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmpasswordInputLayout" />
 
-    <TextView
-        android:id="@+id/olvidarPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter"
-        android:text="¿Olvidaste tu contraseña?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
-
-    <Button
-        android:id="@+id/olvidarPassbutton"
-        android:layout_width="118dp"
-        android:layout_height="39dp"
-        android:background="#00FFFFFF"
-        android:text="Pulsa aquí"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textColor="#008EFF"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/olvidarPass"
-        app:rippleColor="#00FFFFFF"
-        app:strokeColor="#00FFFFFF" />
 
     <TextView
         android:id="@+id/registrarText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="¿Aun no tienes una cuenta?"
+        android:text="¿Ya tienes una cuenta?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciarSesionBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/registroBtn" />
 
     <Button
-        android:id="@+id/registrarbutton"
-        android:layout_width="118dp"
-        android:layout_height="39dp"
+        android:id="@+id/iniciarbutton"
+        android:layout_width="162dp"
+        android:layout_height="36dp"
         android:background="#00FFFFFF"
-        android:fontFamily="@font/inter_bold"
-        android:text="Registrarse"
-        android:textAlignment="textStart"
+        android:text="Iniciar sesión"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#008EFF"
         android:textStyle="italic"
@@ -154,20 +178,5 @@
         app:layout_constraintTop_toBottomOf="@+id/registrarText"
         app:rippleColor="#00FFFFFF"
         app:strokeColor="#00FFFFFF" />
-
-    <Button
-        android:id="@+id/GoogleBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:backgroundTint="#0C2A628E"
-        android:fontFamily="@font/inter_semibold"
-        android:text="Ingresar con Google"
-        android:textAllCaps="false"
-        android:textColor="#D56147"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrarbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
