@@ -6,7 +6,6 @@
 
     <TextView
         android:id="@+id/textView4"
-        tools:ignore="MissingConstraints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -20,7 +19,6 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        tools:ignore="MissingConstraints"
         android:layout_width="306dp"
         android:layout_height="575dp"
         android:layout_marginStart="48dp"
@@ -32,7 +30,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <SearchView
-        tools:ignore="MissingConstraints"
         android:layout_width="308dp"
         android:layout_height="42dp"
         android:layout_marginStart="48dp"
@@ -42,6 +39,5 @@
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
