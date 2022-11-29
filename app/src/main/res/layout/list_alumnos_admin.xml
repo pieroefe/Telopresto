@@ -30,6 +30,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <SearchView
+
         android:layout_width="308dp"
         android:layout_height="42dp"
         android:layout_marginStart="48dp"
@@ -39,5 +40,6 @@
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+         />
 </androidx.constraintlayout.widget.ConstraintLayout>
