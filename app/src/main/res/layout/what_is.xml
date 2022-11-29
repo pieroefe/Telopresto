@@ -9,7 +9,7 @@
         android:id="@+id/que_es"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/inter_bold"
         android:text="¿Qué es?"
         android:textAlignment="center"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -46,14 +46,15 @@
 
     <TextView
         android:id="@+id/text_que_es2"
-        android:layout_width="299dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="302dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/inter"
         android:text="Acá podrás encontrar laptops, tabletas, celulares y monitores para uso académico e investigación."
         android:textAlignment="center"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
@@ -61,23 +62,22 @@
         android:id="@+id/continuarbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:backgroundTint="#2F2C2C"
         android:text="Continuar"
         android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_que_es2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="287dp"
         android:layout_height="89dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_que_es2"
         app:srcCompat="@drawable/telopresto1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
