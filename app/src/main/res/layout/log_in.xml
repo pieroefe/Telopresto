@@ -18,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:fontFamily="@font/inter" />
 
     <ImageView
         android:id="@+id/imageInicio"
@@ -48,10 +49,10 @@
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/bordes_redondos"
             android:id="@+id/codigoInputEditText"
             android:layout_width="match_parent"
             android:layout_height="39dp"
+            android:background="@drawable/bordes_redondos"
             android:fontFamily="@font/inter"
             android:maxLength="8"
             android:textAlignment="center"
@@ -74,10 +75,10 @@
         app:startIconDrawable="@drawable/ic_key">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/bordes_redondos"
             android:id="@+id/passwordInputEditText"
             android:layout_width="match_parent"
             android:layout_height="39dp"
+            android:background="@drawable/bordes_redondos"
             android:fontFamily="@font/inter"
             android:inputType="textPassword"
             android:textAlignment="center"
@@ -141,6 +142,7 @@
         android:layout_width="118dp"
         android:layout_height="39dp"
         android:background="#00FFFFFF"
+        android:fontFamily="@font/inter_bold"
         android:text="Registrarse"
         android:textAlignment="textStart"
         android:textAllCaps="false"
