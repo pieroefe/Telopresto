@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/usuariosti_menu"
+        android:icon="@drawable/usario"
+        android:onClick="usuarioTI"
+        android:title="Usuarios TI"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/equipos_menu"
         android:icon="@drawable/ic_laptop"
         android:title="Equipos"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/equipos_menu"
-        android:icon="@drawable/ic_reserva"
-        android:title="Solicitudes"
+        android:id="@+id/alumno_menu"
+        android:icon="@drawable/ic_person"
+        android:title="Alumnos"
+        android:onClick="alumno"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/reservas_menu"
-        android:icon="@drawable/ic_reloj"
-        android:title="Mis Reservas"
-        app:showAsAction="ifRoom" />
-
-
-
 
 </menu>

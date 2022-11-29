@@ -28,13 +28,13 @@ public class Cliente_solicitudes extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
-            case R.id.equipos_menu:
+            case R.id.usuariosti_menu:
 
                 //startActivity(new Intent(Cliente_lista.this, Cliente_lista.this));
                 Log.d("msgOptAppBar","menu equipos");
                 return true;
 
-            case R.id.solicitudes_menu:
+            case R.id.equipos_menu:
 
                 Log.d("msgOptAppBar","menu soli");
                 return true;
