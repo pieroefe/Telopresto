@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.telopresto.Cliente.Cliente_lista;
 import com.example.telopresto.dto.Usuario;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -115,10 +116,10 @@ public class Login_principal extends AppCompatActivity {
                                                                 Usuario usuario = children.getValue(Usuario.class);
                                                                 if (usuario.getCorreo().equals(correo.getEditText().getText().toString())){
                                                                     if(usuario.getRol().equals("administrador")){
-                                                                        Intent intent = new Intent(Login_principal.this, lista_equipos_admin.class);
+                                                                        Intent intent = new Intent(Login_principal.this, ListadoEquiposAdmin.class);
                                                                         startActivity(intent);
                                                                     }else{
-                                                                        Intent intent = new Intent(Login_principal.this,Cliente_lista.class);
+                                                                        Intent intent = new Intent(Login_principal.this, Cliente_lista.class);
                                                                         intent.putExtra("key",usuario.getKey());
                                                                         startActivity(intent);
                                                                     }
