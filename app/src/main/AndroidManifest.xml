@@ -65,7 +65,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".agregar_usuarioti_admin"
+            android:name=".Admin.agregar_usuarioti_admin"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -80,14 +80,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".solicitud_rechazada_usuaurioti"
+            android:name=".TI.solicitud_rechazada_usuaurioti"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".solicitud_aprobada_usuarioti"
+            android:name=".TI.solicitud_aprobada_usuarioti"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -101,14 +101,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".editar_equipo_usuarioti"
+            android:name=".TI.editar_equipo_usuarioti"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".agregar_equipo_usaurioti"
+            android:name=".TI.agregar_equipo_usaurioti"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -127,28 +127,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Cliente_solicitudes_detalles"
+            android:name=".Cliente.Cliente_solicitudes_detalles"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Cliente_reserva"
+            android:name=".Cliente.Cliente_reserva"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Cliente_detalles"
+            android:name=".Cliente.Cliente_detalles"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Cliente_lista"
+            android:name=".Cliente.Cliente_lista"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
