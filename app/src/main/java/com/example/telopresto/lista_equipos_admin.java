@@ -1,11 +1,13 @@
 package com.example.telopresto;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class lista_equipos_admin extends AppCompatActivity {
 
@@ -27,5 +29,8 @@ public class lista_equipos_admin extends AppCompatActivity {
     public void alumno(MenuItem menuItem) {
         Intent intent = new Intent(lista_equipos_admin.this, listado_alumnos_admin.class);
         startActivity(intent);
+    }
+    public void equipos(MenuItem menuItem) {
+        Toast.makeText(this, "Usted se encuentra en el lista de equipos", Toast.LENGTH_SHORT).show();
     }
 }

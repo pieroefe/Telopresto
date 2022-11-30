@@ -21,5 +21,4 @@
         android:onClick="alumno"
         android:title="Alumnos"
         app:showAsAction="ifRoom" />
-
 </menu>
