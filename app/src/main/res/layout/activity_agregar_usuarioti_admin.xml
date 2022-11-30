@@ -17,7 +17,8 @@
         app:layout_constraintEnd_toStartOf="@+id/CorreoUsuario"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/correoUsuario" />
+        app:layout_constraintTop_toTopOf="@+id/correoUsuario"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/textView34"
@@ -30,7 +31,8 @@
         app:layout_constraintEnd_toStartOf="@+id/ContraseniaUsuario"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/contraseniaUsuario" />
+        app:layout_constraintTop_toTopOf="@+id/contraseniaUsuario"
+        tools:ignore="UnknownId" />
 
     <EditText
         android:id="@+id/nombreUsuario"
@@ -103,7 +105,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/codigoPUCPUsuario"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.692"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/textView35"
@@ -117,7 +120,8 @@
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/nombreUsuario"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.692"
+        tools:ignore="UnknownId" />
 
     <EditText
         android:id="@+id/contraseniaUsuario"
@@ -146,4 +150,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contraseniaUsuario" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationAdmmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_admin"
+        app:itemIconTint="@color/amarillo"
+        android:background="@color/azul"
+        app:labelVisibilityMode="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
