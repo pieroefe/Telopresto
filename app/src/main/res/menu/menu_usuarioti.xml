@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/listado_equipos"
+        android:icon="@drawable/ic_laptop"
+        android:title="Equipos"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/solicitudes"
+        android:icon="@drawable/solictudes"
+        android:title="Solicitudes"
+        app:showAsAction="ifRoom" />
+
+</menu>

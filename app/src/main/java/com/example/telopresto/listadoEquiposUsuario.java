@@ -1,41 +1,36 @@
 package com.example.telopresto;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class edit_usuario_admin extends AppCompatActivity {
+public class listadoEquiposUsuario extends AppCompatActivity {
+
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.edit_usuario_admin);
+        setContentView(R.layout.activity_listado_equipos_usuarioti);
         setBottomNavigationView();
     }
     public void setBottomNavigationView(){
-        bottomNavigationView = findViewById(R.id.bottomNavigationAdmmin);
+        bottomNavigationView = findViewById(R.id.bottomNavigationUsuario);
         bottomNavigationView.clearAnimation();
-        bottomNavigationView.setSelectedItemId(R.id.equipo_menu);
+        bottomNavigationView.setSelectedItemId(R.id.listado_equipos);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.usuarios_menu:
-                        startActivity(new Intent(edit_usuario_admin.this,listadoUsuarioAdmin.class));
-                        overridePendingTransition(0,0);
+                    case R.id.listado_equipos:
                         return true;
-                    case R.id.equipo_menu:
-                        startActivity(new Intent(edit_usuario_admin.this,ListadoEquiposAdmin.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.alumno_menu:
-                        startActivity(new Intent(edit_usuario_admin.this,listadoAlumnoAdmin.class));
+                    case R.id.solicitudes:
+                        startActivity(new Intent(listadoEquiposUsuario.this,listaSolicitudesUsuario.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

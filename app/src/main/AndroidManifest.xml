@@ -28,15 +28,11 @@
         </activity>
         <activity
             android:name=".ListadoEquiposAdmin"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".WhatIs"
@@ -98,7 +94,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".solicitudes_usuarioti"
+            android:name=".listaSolicitudesUsuario"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -119,11 +115,16 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".listado_equipos_usuarioti"
-            android:exported="false">
+            android:name=".listadoEquiposUsuario"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Cliente_solicitudes_detalles"
