@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editar_equipo_usuarioti">
+    tools:context=".TI.editar_equipo_usuarioti">
 
     <EditText
         android:id="@+id/editarIncluyeDispositivo"

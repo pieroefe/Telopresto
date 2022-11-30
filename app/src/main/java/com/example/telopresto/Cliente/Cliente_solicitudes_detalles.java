@@ -1,8 +1,10 @@
-package com.example.telopresto;
+package com.example.telopresto.Cliente;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.telopresto.R;
 
 public class Cliente_solicitudes_detalles extends AppCompatActivity {
 

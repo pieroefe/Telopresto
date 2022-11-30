@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.telopresto.Cliente.Cliente_lista;
 import com.example.telopresto.dto.Usuario;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -26,7 +27,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -51,7 +51,7 @@ public class Login_principal extends AppCompatActivity {
         super.onStart();
         if(firebaseAuth.getCurrentUser() != null){
             if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                startActivity(new Intent(Login_principal.this,Cliente_lista.class));
+                startActivity(new Intent(Login_principal.this, Cliente_lista.class));
                 finish();
             }else{
                 firebaseAuth.signOut();

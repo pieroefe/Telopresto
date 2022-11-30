@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cliente_lista">
+    tools:context=".Cliente.Cliente_lista">
 
     <TextView
         android:id="@+id/tv_titulo"
