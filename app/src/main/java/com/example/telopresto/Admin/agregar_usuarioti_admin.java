@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.telopresto.ListadoEquiposAdmin;
+import com.example.telopresto.listadoAlumnoAdmin;
+import com.example.telopresto.listadoUsuarioAdmin;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -31,15 +34,15 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.usuarios_menu:
-                        startActivity(new Intent(agregar_usuarioti_admin.this,listadoUsuarioAdmin.class));
+                        startActivity(new Intent(agregar_usuarioti_admin.this, listadoUsuarioAdmin.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.equipo_menu:
-                        startActivity(new Intent(agregar_usuarioti_admin.this,ListadoEquiposAdmin.class));
+                        startActivity(new Intent(agregar_usuarioti_admin.this, ListadoEquiposAdmin.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.alumno_menu:
-                        startActivity(new Intent(agregar_usuarioti_admin.this,listadoAlumnoAdmin.class));
+                        startActivity(new Intent(agregar_usuarioti_admin.this, listadoAlumnoAdmin.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
