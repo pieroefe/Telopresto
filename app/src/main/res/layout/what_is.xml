@@ -65,6 +65,7 @@
         android:backgroundTint="#2F2C2C"
         android:text="Continuar"
         android:textAllCaps="false"
+        android:onClick="log_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
