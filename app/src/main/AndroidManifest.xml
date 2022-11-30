@@ -12,7 +12,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Telopresto"
         tools:targetApi="31">
+        <activity
+            android:name=".listadoAlumnoAdmin"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".listadoUsuarioAdmin"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ListadoEquiposAdmin"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".WhatIs"
             android:exported="false">
@@ -20,7 +45,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Login_principal"
             android:exported="false">
@@ -28,8 +52,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-
         <activity
             android:name=".NewPasswordActivity"
             android:exported="false"
@@ -38,19 +60,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ForgetPassword"
             android:exported="false"
             android:parentActivityName=".Login_principal">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-        <activity
-            android:name=".lista_equipos_admin"
-            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -72,13 +85,6 @@
         </activity>
         <activity
             android:name=".solicitud_rechazada_usuaurioti"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".listado_usuarios_admin"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -120,13 +126,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".listado_alumnos_admin"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Cliente_solicitudes_detalles"
             android:exported="false">
             <meta-data
@@ -156,13 +155,8 @@
         </activity>
         <activity
             android:name=".SplashSreen"
-            android:exported="true"
+            android:exported="false"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -174,7 +168,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
 
         <meta-data
             android:name="preloaded_fonts"
