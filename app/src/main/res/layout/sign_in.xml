@@ -167,6 +167,7 @@
         android:layout_width="162dp"
         android:layout_height="36dp"
         android:background="#00FFFFFF"
+        android:onClick="GoLogin"
         android:text="Iniciar sesión"
         android:textAlignment="center"
         android:textAllCaps="false"
