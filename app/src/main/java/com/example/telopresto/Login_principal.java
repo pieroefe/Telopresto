@@ -7,7 +7,11 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,175 +26,166 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import com.google.firebase.database.ValueEventListener;
 
 
 public class Login_principal extends AppCompatActivity {
 
     //definimos las variables del firebase auth
 
-    GoogleSignInClient googleSignInClient;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    FirebaseAuth firebaseAuth;
-
-    EditText codigo,password;
-    Button iniciar,registrarse;
+    FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
+    TextInputLayout correo, password;
+    Button btnIniciarSesion, btnRegistrarUsuario;
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(firebaseAuth.getCurrentUser() != null){
-            if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                startActivity(new Intent(Login_principal.this,Cliente_lista.class));
-                finish();
-            }else{
-                firebaseAuth.signOut();
-                Toast.makeText(Login_principal.this,"Por favor, Verifique su correo, Revise spam",Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference = firebaseDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in);
-
-        codigo = findViewById(R.id.codigoInputEditText);
-        password = findViewById(R.id.passwordInputEditText);
-        iniciar = findViewById(R.id.iniciarSesionBtn);
-        registrarse = findViewById(R.id.registrarbutton);
-
-
+        getSupportActionBar().hide();
+        correo = findViewById(R.id.codigoInputLayout);
+        password = findViewById(R.id.passwordInputLayout);
+        btnIniciarSesion = findViewById(R.id.iniciarSesionBtn);
+        btnRegistrarUsuario = findViewById(R.id.registrarbutton);
 
 
-
-
-
-
-
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseAuth =  FirebaseAuth.getInstance();
-        firebaseAuth.setLanguageCode("es-419");
-        databaseReference = firebaseDatabase.getReference();
-
-        if(firebaseAuth.getCurrentUser() != null){
-            if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                startActivity(new Intent(Login_principal.this,Cliente_lista.class));
-                finish();
-            }else{
-                firebaseAuth.signOut();
-                Toast.makeText(Login_principal.this,"Por favor, Verifique su correo, Revise spam",Toast.LENGTH_SHORT).show();
-            }
-
-        }else{
-            ((Button) findViewById(R.id.registrarbutton)).setOnClickListener(view -> {
-                startActivity(new Intent(Login_principal.this,signIn.class));
-            });
-            ((Button) findViewById(R.id.iniciarSesionBtn)).setOnClickListener(view -> {
-                EditText correo = findViewById(R.id.codigoInputEditText);
-                EditText contrasena = findViewById(R.id.passwordInputEditText);
-                if(correo.getText().toString().trim().isEmpty()){
-                    correo.setError("No dejar vacio");
-                    correo.requestFocus();
-                }else if (contrasena.getText().toString().trim().isEmpty()){
-                    contrasena.setError("No dejar vacio");
-                    contrasena.requestFocus();
-                }else{
-                    firebaseAuth.signInWithEmailAndPassword(correo.getText().toString(),contrasena.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                firebaseAuth.getCurrentUser().reload().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                                            startActivity(new Intent(Login_principal.this,Cliente_lista.class));
-                                            finish();
-                                        }else{
-                                            firebaseAuth.getCurrentUser().sendEmailVerification();
-                                            Toast.makeText(Login_principal.this, "Se el ha enviado nuevamente la verificación por correo, por favor verifique", Toast.LENGTH_LONG).show();
-                                        }
-                                    }
-                                });
-                            }else{
-                                Toast.makeText(Login_principal.this, "Verifique sus datos", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-            });
-            ((Button) findViewById(R.id.GoogleBtn)).setOnClickListener(view -> {
-                Intent intent = googleSignInClient.getSignInIntent();
-                signInLauncher.launch(intent);
-            });
-        }
-
-    }
-
-    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>(){
-        @Override
-        public void onActivityResult(ActivityResult result) {
-            if(result.getResultCode() == RESULT_OK){
-                onSignInResult(result);
-            }
-        }
-    });
-
-    private void onSignInResult(ActivityResult result){
-        Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
-        try {
-            GoogleSignInAccount account = accountTask.getResult();
-            firebaseAuthenticationFinal(account);
-        }catch (Exception e){
-            Log.d("Exception",e.getMessage());
-        }
-    }
-
-    private void firebaseAuthenticationFinal(GoogleSignInAccount account) {
-        AuthCredential authCredential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
-        firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    if(task.getResult().getAdditionalUserInfo().isNewUser()){
-                        databaseReference.child("users").child(firebaseAuth.getCurrentUser().getUid()).setValue(new Usuario(task.getResult().getAdditionalUserInfo().getUsername(),task.getResult().getAdditionalUserInfo().getUsername(),firebaseAuth.getCurrentUser().getEmail())).addOnCompleteListener(new OnCompleteListener<Void>() {
+            public void onClick(View view) {
+                if (verificarEstadoInternet()) {
+                    //Iniciar sesion
+                    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z.]+";
+                    boolean correoValido = true;
+
+                    if (correo.getEditText().getText().toString() != null && !correo.getEditText().getText().toString().equals("")) {
+                        if (!correo.getEditText().getText().toString().matches(emailPattern)) {
+                            correo.setError("Ingrese un correo válido");
+                            correoValido = false;
+                        } else {
+                            System.out.println("llego aqui");
+                            correo.setErrorEnabled(false);
+                        }
+                    } else {
+                        correo.setError("Ingrese un correo");
+                        correoValido = false;
+                    }
+
+                    boolean passwordValido = true;
+                    if (password.getEditText().getText().toString() != null && !password.getEditText().getText().toString().equals("")) {
+                        password.setErrorEnabled(false);
+                    } else {
+                        password.setError("Ingrese una contraseña");
+                        passwordValido = false;
+                    }
+
+                    if (correoValido && passwordValido) {
+                        firebaseAuth.signInWithEmailAndPassword(correo.getEditText().getText().toString(), password.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                    Toast.makeText(Login_principal.this, "Se crea una cuenta Google", Toast.LENGTH_SHORT).show();
-                                }else {
-                                    Toast.makeText(Login_principal.this, "Error crea una cuenta Google", Toast.LENGTH_SHORT).show();
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d("task", "EXITO EN REGISTRO");
+
+                                    firebaseAuth.getCurrentUser().reload().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+                                                Log.d("mes", correo.getEditText().getText().toString());
+                                                //Verificamos si es administrador
+                                                databaseReference.child("usuario").addListenerForSingleValueEvent(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                        if (snapshot.getValue() != null){
+                                                            for (DataSnapshot children : snapshot.getChildren()){
+                                                                Usuario usuario = children.getValue(Usuario.class);
+                                                                if (usuario.getCorreo().equals(correo.getEditText().getText().toString())){
+                                                                    if(usuario.getRol().equals("administrador")){
+                                                                        Intent intent = new Intent(Login_principal.this, lista_equipos_admin.class);
+                                                                        startActivity(intent);
+                                                                    }else{
+                                                                        Intent intent = new Intent(Login_principal.this,Cliente_lista.class);
+                                                                        intent.putExtra("key",usuario.getKey());
+                                                                        startActivity(intent);
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                                    }
+                                                });
+                                            } else {
+                                                Snackbar.make(findViewById(R.id.constrain_sesion), "Su cuenta no ha sido verificada. Verifíquela para poder ingresar", Snackbar.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    });
+
+                                } else {
+                                    Log.d("task", "ERROR EN REGISTRO - " + task.getException().getMessage());
+                                    Snackbar.make(findViewById(R.id.constrain_sesion), task.getException().getMessage(), Snackbar.LENGTH_LONG).show();
                                 }
                             }
                         });
 
-                    }else{
-                        Toast.makeText(Login_principal.this, "Ingresa con google correctamente", Toast.LENGTH_SHORT).show();
                     }
-                    startActivity(new Intent(Login_principal.this,Cliente_lista.class));
-                    finish();
-                }else{
-                    Toast.makeText(Login_principal.this, "Error utilizando credenciales", Toast.LENGTH_SHORT).show();
+                } else {
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(Login_principal.this);
+                    builder.setMessage("Verifique su conexión a internet para poder ingresar a la aplicación");
+                    builder.setPositiveButton("Aceptar",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                    builder.show();
                 }
             }
         });
+        btnRegistrarUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (verificarEstadoInternet()) {
+                    //registrar Usuario
+                    Intent intent = new Intent(Login_principal.this,signIn.class);
+                    startActivity(intent);
+                } else {
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(Login_principal.this);
+                    builder.setMessage("Verifique su conexión a internet para poder ingresar a la aplicación");
+                    builder.setPositiveButton("Aceptar",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                    builder.show();
+                }
+            }
+        });
+    }
+
+    public boolean verificarEstadoInternet(){
+        ConnectivityManager connectivityManager =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 

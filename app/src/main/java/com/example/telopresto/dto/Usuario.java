@@ -1,27 +1,22 @@
 package com.example.telopresto.dto;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+
 public class Usuario {
 
-    private String nombre;
     private String correo;
-    private String contraseña;
     private String codigo;
     private String rol;
+    private String key;
 
-    public Usuario(String nombre, String correo, String contraseña) {
-        this.nombre = nombre;
+    public Usuario(String correo, String codigo, String rol, String key) {
         this.correo = correo;
-        this.contraseña = contraseña;
         this.codigo = codigo;
         this.rol = rol;
+        this.key = key;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public Usuario() {
     }
 
     public String getCorreo() {
@@ -30,14 +25,6 @@ public class Usuario {
 
     public void setCorreo(String correo) {
         this.correo = correo;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
     }
 
     public String getCodigo() {
@@ -54,5 +41,13 @@ public class Usuario {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
