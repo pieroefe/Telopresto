@@ -1,4 +1,4 @@
-package com.example.telopresto;
+package com.example.telopresto.Cliente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,13 +10,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
-public class Cliente_reserva extends AppCompatActivity {
+import com.example.telopresto.R;
+
+public class Cliente_solicitudes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cliente_reserva);
+        setContentView(R.layout.activity_cliente_solicitudes);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -46,7 +49,7 @@ public class Cliente_reserva extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public class ListaReserva extends RecyclerView.Adapter{
+    public class ListaSolicitudes extends RecyclerView.Adapter{
 
         @NonNull
         @Override
