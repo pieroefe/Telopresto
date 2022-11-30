@@ -1,4 +1,4 @@
-package com.example.telopresto;
+package com.example.telopresto.Cliente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.telopresto.R;
 
 public class Cliente_detalles extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.telopresto;
+package com.example.telopresto.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import com.example.telopresto.R;
 
 public class agregar_usuarioti_admin extends AppCompatActivity {
 

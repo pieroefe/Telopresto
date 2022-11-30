@@ -1,22 +1,23 @@
-package com.example.telopresto;
+package com.example.telopresto.Cliente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 
-public class Cliente_lista extends AppCompatActivity {
+import com.example.telopresto.R;
 
-
+public class Cliente_reserva extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cliente_lista);
-
+        setContentView(R.layout.activity_cliente_reserva);
     }
 
     @Override
@@ -47,5 +48,22 @@ public class Cliente_lista extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public class ListaReserva extends RecyclerView.Adapter{
 
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return null;
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 0;
+        }
+    }
 }
