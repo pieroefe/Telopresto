@@ -3,22 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/usuariosti_menu"
+        android:id="@+id/equipos_cliente"
         android:icon="@drawable/ic_laptop"
         android:title="Equipos"
-        app:showAsAction="ifRoom" />
+         />
 
     <item
-        android:id="@+id/equipos_menu"
+        android:id="@+id/solicitudes_cliente"
         android:icon="@drawable/ic_reserva"
-        android:title="Solicitudes"
-        app:showAsAction="ifRoom" />
+        android:title="Solicitudes" />
 
     <item
         android:id="@+id/reservas_menu"
-        android:icon="@drawable/ic_reloj"
-        android:title="Mis Reservas"
-        app:showAsAction="ifRoom" />
+        android:icon="@drawable/hisotry3"
+        android:title="Mis Reservas" />
 
 
 

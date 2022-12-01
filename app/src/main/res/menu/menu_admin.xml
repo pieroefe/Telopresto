@@ -7,13 +7,13 @@
         android:title="Usuarios TI" />
 
     <item
-        android:id="@+id/equipo_menu"
-        android:icon="@drawable/dispositivos"
-        android:title="Equipos" />
+        android:id="@+id/reportes"
+        android:icon="@drawable/report2"
+        android:title="Reportes" />
 
     <item
         android:id="@+id/alumno_menu"
         android:icon="@drawable/alumnoss1"
-        android:title="Alumnos"/>
+        android:title="Clientes"/>
 
 </menu>
