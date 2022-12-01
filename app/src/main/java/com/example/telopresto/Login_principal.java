@@ -103,7 +103,7 @@ public class Login_principal extends AppCompatActivity {
                                                                 Usuario usuario = children.getValue(Usuario.class);
                                                                 if (usuario.getCorreo().equals(correo.getEditText().getText().toString())){
                                                                     if(usuario.getRol().equals("administrador")){
-                                                                        Intent intent = new Intent(Login_principal.this, ListadoEquiposAdmin.class);
+                                                                        Intent intent = new Intent(Login_principal.this, listadoUsuarioAdmin.class);
                                                                         startActivity(intent);
                                                                     }else{
                                                                         Intent intent = new Intent(Login_principal.this, Cliente_lista.class);
