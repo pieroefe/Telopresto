@@ -129,6 +129,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".Cliente.Cliente_solicitudes"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Cliente.Cliente_reserva"
             android:exported="false">
             <meta-data
