@@ -158,20 +158,5 @@
         app:rippleColor="#00FFFFFF"
         app:strokeColor="#00FFFFFF" />
 
-    <Button
-        android:id="@+id/GoogleBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:backgroundTint="#0C2A628E"
-        android:fontFamily="@font/inter_semibold"
-        android:text="Continuar con Google"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#D56147"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciarbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
