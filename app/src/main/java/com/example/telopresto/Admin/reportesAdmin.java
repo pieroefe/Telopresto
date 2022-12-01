@@ -1,4 +1,4 @@
-package com.example.telopresto;
+package com.example.telopresto.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,8 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.telopresto.Admin.listadoAlumnoAdmin;
-import com.example.telopresto.Admin.listadoUsuarioAdmin;
+import com.example.telopresto.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -26,7 +25,7 @@ public class reportesAdmin extends AppCompatActivity {
     public void setBottomNavigationView(){
         bottomNavigationView = findViewById(R.id.bottomNavigationAdmmin);
         bottomNavigationView.clearAnimation();
-        bottomNavigationView.setSelectedItemId(R.id.usuarios_menu);
+        bottomNavigationView.setSelectedItemId(R.id.reportes);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

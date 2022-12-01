@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.telopresto.R;
-import com.example.telopresto.reportesAdmin;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -25,7 +24,7 @@ public class listadoAlumnoAdmin extends AppCompatActivity {
         public void setBottomNavigationView(){
             bottomNavigationView = findViewById(R.id.bottomNavigationAdmmin);
             bottomNavigationView.clearAnimation();
-            bottomNavigationView.setSelectedItemId(R.id.usuarios_menu);
+            bottomNavigationView.setSelectedItemId(R.id.alumno_menu);
             bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -24,7 +24,7 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
     public void setBottomNavigationView(){
         bottomNavigationView = findViewById(R.id.bottomNavigationUsuario);
         bottomNavigationView.clearAnimation();
-        bottomNavigationView.setSelectedItemId(R.id.listado_equipos);
+        bottomNavigationView.setSelectedItemId(R.id.solicitudes);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
