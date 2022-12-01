@@ -1,5 +1,9 @@
 package com.example.telopresto;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +19,7 @@ import android.widget.Button;
 
 import com.example.telopresto.Admin.listadoUsuarioAdmin;
 import com.example.telopresto.Cliente.Cliente_lista;
+import com.example.telopresto.TI.listadoEquiposUsuario;
 import com.example.telopresto.dto.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -50,7 +55,7 @@ public class Login_principal extends AppCompatActivity {
         getSupportActionBar().hide();
         correo = findViewById(R.id.correoInput);
         password = findViewById(R.id.passwordInputLayout);
-        btnIniciarSesion = findViewById(R.id.iniciarSesionBtn);
+        btnIniciarSesion = findViewById(R.id.btn_restablecer);
         btnRegistrarUsuario = findViewById(R.id.registrarbutton);
 
 
@@ -103,13 +108,21 @@ public class Login_principal extends AppCompatActivity {
                                                             for (DataSnapshot children : snapshot.getChildren()){
                                                                 Usuario usuario = children.getValue(Usuario.class);
                                                                 if (usuario.getCorreo().equals(correo.getEditText().getText().toString())){
-                                                                    if(usuario.getRol().equals("administrador")){
+                                                                    if(usuario.getRol().equals("administrador")) {
                                                                         Intent intent = new Intent(Login_principal.this, listadoUsuarioAdmin.class);
-                                                                        startActivity(intent);
-                                                                    }else{
-                                                                        Intent intent = new Intent(Login_principal.this, Cliente_lista.class);
                                                                         intent.putExtra("key",usuario.getKey());
                                                                         startActivity(intent);
+                                                                    }
+                                                                    if(usuario.getRol().equals("usuarioTI")) {
+                                                                        Intent intent1 = new Intent(Login_principal.this, listadoEquiposUsuario.class);
+                                                                        intent1.putExtra("key",usuario.getKey());
+                                                                        startActivity(intent1);
+                                                                    }
+                                                                    if(usuario.getRol().equals("cliente")) {
+
+                                                                        Intent intent2 = new Intent(Login_principal.this, Cliente_lista.class);
+                                                                        intent2.putExtra("key",usuario.getKey());
+                                                                        startActivity(intent2);
                                                                     }
                                                                 }
                                                             }

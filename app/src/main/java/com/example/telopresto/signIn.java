@@ -85,28 +85,29 @@ public class signIn extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Log.d("task", "EXITO EN REGISTRO");
+                        Log.d("task", "Registro exitoso");
                         firebaseAuth.getCurrentUser().sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Log.d("task", "EXITO EN ENVIO DE CORREO DE VERIFICACION");
+                                Log.d("task", "Envion de correo de verifiacion exitoso");
                                 String key = databaseReference.push().getKey();
                                 databaseReference.child(key).child("correo").setValue(correo.getEditText().getText().toString());
-                                databaseReference.child(key).child("rol").setValue("administrador");
+                                databaseReference.child(key).child("rol").setValue("cliente");
                                 databaseReference.child(key).child("key").setValue(key);
                                 Intent intent = new Intent(signIn.this, Login_principal.class);
-                                intent.putExtra("exito", "Se ha enviado un correo para la verificación de su cuenta");
+                                intent.putExtra("exito", "Revise su correo para la verificacion de su cuenta");
                                 startActivity(intent);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.d("task", "ERROR EN ENVIO DE CORREO DE VERIFICACION - " + e.getMessage());
+                                Log.d("task", "Error al envio de correo de verificacion - " + e.getMessage());
                             }
                         });
 
                     } else {
-                        Log.d("task", "ERROR EN REGISTRO - " + task.getException().getMessage());
+                        Toast.makeText( signIn.this, "Error: Este correo ya esta siendo utilizado", Toast.LENGTH_SHORT).show();
+                        Log.d("task", "Error en el momento de registro - " + task.getException().getMessage());
                     }
                 }
             });
