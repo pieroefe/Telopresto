@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listaSolicitudesUsuario">
+    tools:context=".TI.listaSolicitudesUsuario">
 
     <TextView
         android:id="@+id/textView29"

@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".listadoUsuarioAdmin"
+            android:name=".Admin.listadoUsuarioAdmin"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -94,7 +94,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".listaSolicitudesUsuario"
+            android:name=".TI.listaSolicitudesUsuario"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -115,7 +115,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".listadoEquiposUsuario"
+            android:name=".TI.listadoEquiposUsuario"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -152,15 +152,11 @@
         </activity>
         <activity
             android:name=".Cliente.Cliente_lista"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SplashSreen"

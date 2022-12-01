@@ -5,14 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.telopresto.Admin.listadoAlumnoAdmin;
 import com.example.telopresto.R;
-import com.example.telopresto.listadoUsuarioAdmin;
-import com.example.telopresto.reportesAdmin;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

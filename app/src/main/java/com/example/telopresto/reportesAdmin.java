@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.telopresto.Admin.listadoAlumnoAdmin;
+import com.example.telopresto.Admin.listadoUsuarioAdmin;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -31,7 +32,7 @@ public class reportesAdmin extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.usuarios_menu:
-                        startActivity(new Intent(reportesAdmin.this,listadoUsuarioAdmin.class));
+                        startActivity(new Intent(reportesAdmin.this, listadoUsuarioAdmin.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.reportes:
