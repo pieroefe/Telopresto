@@ -29,7 +29,7 @@ public class Cliente_solicitudes extends AppCompatActivity {
     public void setBottomNavigationView(){
         bottomNavigationView = findViewById(R.id.bottomNavigationCliente);
         bottomNavigationView.clearAnimation();
-        bottomNavigationView.setSelectedItemId(R.id.equipos_cliente);
+        bottomNavigationView.setSelectedItemId(R.id.solicitudes_cliente);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -30,7 +30,7 @@ public class Cliente_reserva extends AppCompatActivity {
     public void setBottomNavigationView(){
         bottomNavigationView = findViewById(R.id.bottomNavigationCliente);
         bottomNavigationView.clearAnimation();
-        bottomNavigationView.setSelectedItemId(R.id.equipos_cliente);
+        bottomNavigationView.setSelectedItemId(R.id.reservas_menu);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
