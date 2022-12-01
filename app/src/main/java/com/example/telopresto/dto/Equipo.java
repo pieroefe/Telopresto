@@ -2,18 +2,18 @@ package com.example.telopresto.dto;
 
 public class Equipo {
 
-    String nombreDispositivo;
+    String tipo;
     String marca;
     String caracteristicas;
     String incluye;
     int stock;
 
-    public String getNombreDispositivo() {
-        return nombreDispositivo;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setNombreDispositivo(String nombreDispositivo) {
-        this.nombreDispositivo = nombreDispositivo;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getMarca() {
