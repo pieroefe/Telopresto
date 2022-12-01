@@ -47,7 +47,7 @@ public class Login_principal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in);
         getSupportActionBar().hide();
-        correo = findViewById(R.id.codigoInputLayout);
+        correo = findViewById(R.id.correoInput);
         password = findViewById(R.id.passwordInputLayout);
         btnIniciarSesion = findViewById(R.id.iniciarSesionBtn);
         btnRegistrarUsuario = findViewById(R.id.registrarbutton);
@@ -103,7 +103,7 @@ public class Login_principal extends AppCompatActivity {
                                                                 Usuario usuario = children.getValue(Usuario.class);
                                                                 if (usuario.getCorreo().equals(correo.getEditText().getText().toString())){
                                                                     if(usuario.getRol().equals("administrador")){
-                                                                        Intent intent = new Intent(Login_principal.this, reportesAdmin.class);
+                                                                        Intent intent = new Intent(Login_principal.this, ListadoEquiposAdmin.class);
                                                                         startActivity(intent);
                                                                     }else{
                                                                         Intent intent = new Intent(Login_principal.this, Cliente_lista.class);
