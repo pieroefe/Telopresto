@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/azul">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="-2dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="154dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="#FFFFFF"
+                    android:text="Laptop Gamer"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/addbtn"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#D9D9D9"
+                        android:drawableBottom="@drawable/ic_add"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#2F2C2C" />
+
+                    <Button
+                        android:id="@+id/editbtn"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#D9D9D9"
+                        android:drawableBottom="@drawable/ic_edit"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#2F2C2C" />
+
+                    <Button
+                        android:id="@+id/deletebtn"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#D9D9D9"
+                        android:drawableBottom="@drawable/ic_delete"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#2F2C2C" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
