@@ -8,148 +8,172 @@
 
     <EditText
         android:id="@+id/editarIncluyeDispositivo"
-        android:layout_width="wrap_content"
+        android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editarStockDispositivo"
-        tools:layout_editor_absoluteX="153dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editarCaracteristicaDispositivo"
+        app:layout_constraintTop_toBottomOf="@+id/editarCaracteristicaDispositivo" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
         android:text="Caracteristicas:"
         app:layout_constraintBottom_toBottomOf="@+id/editarCaracteristicaDispositivo"
+        app:layout_constraintStart_toStartOf="@+id/textView27"
         app:layout_constraintTop_toTopOf="@+id/editarCaracteristicaDispositivo"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="43dp" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <Spinner
         android:id="@+id/editarMarcaDispositivo"
-        android:layout_width="222dp"
+        android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/editarCaracteristicaDispositivo"
-        tools:layout_editor_absoluteX="145dp" />
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/editarNombreDispositivo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/editarNombreDispositivo" />
 
     <EditText
         android:id="@+id/editarNombreDispositivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:ems="8"
+        android:layout_width="188dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bordes_redondos_edittext"
+        android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editarMarcaDispositivo"
-        tools:layout_editor_absoluteX="204dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintStart_toEndOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_dispositivo" />
 
     <TextView
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
         android:text="Stock:"
         app:layout_constraintBottom_toBottomOf="@+id/editarStockDispositivo"
-        app:layout_constraintTop_toTopOf="@+id/editarStockDispositivo"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView23"
+        app:layout_constraintTop_toTopOf="@+id/editarStockDispositivo" />
 
     <EditText
         android:id="@+id/editarCaracteristicaDispositivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_width="188dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editarIncluyeDispositivo"
-        tools:layout_editor_absoluteX="176dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editarMarcaDispositivo"
+        app:layout_constraintTop_toBottomOf="@+id/editarMarcaDispositivo" />
 
     <Button
         android:id="@+id/btn_editar_dispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="162dp"
-        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/negro"
         android:text="Editar"
-        app:layout_constraintBottom_toTopOf="@+id/editar_cancelar_btn"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarStockDispositivo" />
 
     <Button
         android:id="@+id/editar_cancelar_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="149dp"
+        android:backgroundTint="#D9D9D9"
         android:text="Cancelar"
+        android:textAllCaps="false"
+        android:textColor="@color/negro"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="634dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_editar_dispositivo"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/inter_semibold"
         android:text="Nombre del Dispositivo: "
         app:layout_constraintBottom_toBottomOf="@+id/editarNombreDispositivo"
-        app:layout_constraintTop_toTopOf="@+id/editarNombreDispositivo"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="32dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editarNombreDispositivo" />
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
         android:text="Incluye:"
         app:layout_constraintBottom_toBottomOf="@+id/editarIncluyeDispositivo"
+        app:layout_constraintStart_toStartOf="@+id/textView25"
         app:layout_constraintTop_toTopOf="@+id/editarIncluyeDispositivo"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <EditText
         android:id="@+id/editarStockDispositivo"
-        android:layout_width="wrap_content"
+        android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/btn_editar_dispositivo"
-        tools:layout_editor_absoluteX="162dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editarIncluyeDispositivo"
+        app:layout_constraintTop_toBottomOf="@+id/editarIncluyeDispositivo" />
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Editar Dispositivo"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="36dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image_view_dispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/editarNombreDispositivo"
-        tools:layout_editor_absoluteX="141dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
         android:text="Marca:"
         app:layout_constraintBottom_toBottomOf="@+id/editarMarcaDispositivo"
+        app:layout_constraintStart_toStartOf="@+id/textView26"
         app:layout_constraintTop_toTopOf="@+id/editarMarcaDispositivo"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="57dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

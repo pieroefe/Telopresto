@@ -10,18 +10,20 @@
         android:id="@+id/tv_titulo_reservas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Mis reservas"
         android:textSize="35dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="666dp"
-        android:layout_marginStart="1dp"
+        android:layout_width="364dp"
+        android:layout_height="578dp"
         android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationCliente"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
