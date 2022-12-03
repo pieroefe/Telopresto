@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="marca" type="id" />
+    <item name="caracteristicas" type="id" />
+    <item name="incluye" type="id" />
+    <item name="stock" type="id" />
+</resources>
