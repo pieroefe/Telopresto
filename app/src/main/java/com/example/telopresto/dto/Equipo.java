@@ -1,5 +1,7 @@
 package com.example.telopresto.dto;
 
+import android.media.audiofx.DynamicsProcessing;
+
 public class Equipo {
 
     String tipo;
@@ -7,6 +9,7 @@ public class Equipo {
     String caracteristicas;
     String incluye;
     int stock;
+
 
     public String getTipo() {
         return tipo;
@@ -46,5 +49,10 @@ public class Equipo {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return tipo;
     }
 }

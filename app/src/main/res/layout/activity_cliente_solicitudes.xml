@@ -6,26 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".Cliente.Cliente_solicitudes">
 
+
     <TextView
         android:id="@+id/tv_titulo_sol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/inter_bold"
         android:text="Mis solicitudes"
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_solicitudes"
-        android:layout_width="409dp"
-        android:layout_height="658dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_sol" />
+        android:layout_width="354dp"
+        android:layout_height="488dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationCliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"
@@ -38,6 +42,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/agregarSolicitudesBtn"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="16dp"
+        android:drawableTop="@drawable/add_item2"
+        app:layout_constraintBottom_toTopOf="@+id/rv_solicitudes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_sol"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/btnAgregarSolcitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Agregar Solicitud"
+        app:layout_constraintBottom_toBottomOf="@+id/agregarSolicitudesBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/agregarSolicitudesBtn"
+        app:layout_constraintTop_toTopOf="@+id/agregarSolicitudesBtn"
+        app:layout_constraintVertical_bias="0.52" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

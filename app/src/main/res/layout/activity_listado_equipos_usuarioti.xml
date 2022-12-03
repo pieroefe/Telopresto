@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/recyclerViewListaEquipos"
         android:layout_width="374dp"
         android:layout_height="497dp"
         android:layout_marginStart="16dp"
@@ -40,7 +40,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="46dp"
         android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewListaEquipos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/agregar_equipo_btn" />

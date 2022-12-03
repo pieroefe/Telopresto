@@ -10,8 +10,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.telopresto.R;
+import com.example.telopresto.TI.agregar_equipo_usaurioti;
+import com.example.telopresto.TI.listadoEquiposUsuario;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -23,7 +26,19 @@ public class Cliente_solicitudes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_solicitudes);
         setBottomNavigationView();
+
+        Button btnAgregar = (Button) findViewById(R.id.agregarSolicitudesBtn);
+
+        btnAgregar.setOnClickListener(view -> {
+            Intent intent = new Intent(Cliente_solicitudes.this, agregarSolicitud.class);
+            startActivity(intent);
+        });
+
+
     }
+
+
+
 
 
     public void setBottomNavigationView(){
