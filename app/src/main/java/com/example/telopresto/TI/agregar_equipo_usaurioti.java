@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -23,6 +24,8 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
 
     EditText opcionOtro, caracteristicasDispositivo, incluyeDispositivo, stockDispositivo, marcaDispositivo;
     ArrayList<String> listaMarcas = new ArrayList<>();
+    ArrayList<String> listaId = new ArrayList<>();
+
 
     Spinner spinner;
 
@@ -64,6 +67,17 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
 
         Equipo equipo = new Equipo();
 
+        if (listaId.isEmpty()){
+            listaId.add("0");
+        }
+
+        int contador= listaId.size()-1;
+        for(int i=contador;i<listaId.size();i++){
+            equipo.setId(String.valueOf(i+1));
+
+
+        }
+        listaId.add(String.valueOf(contador+1));
 
         equipo.setCaracteristicas(caracteristicasDispositivo.getText().toString());
         equipo.setIncluye(incluyeDispositivo.getText().toString());

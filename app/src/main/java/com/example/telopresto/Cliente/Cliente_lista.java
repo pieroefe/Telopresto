@@ -63,14 +63,12 @@ public class Cliente_lista extends AppCompatActivity {
                     Equipo equipo = snapshot1.getValue(Equipo.class);
                     equipos.add(equipo);
 
+
                 }
                 recyclerView = findViewById(R.id.recyclerViewEquiposListado);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Cliente_lista.this));
                 recyclerView.setAdapter(listaEquiposAdapter);
-
-
-
 
             }
 
@@ -84,6 +82,8 @@ public class Cliente_lista extends AppCompatActivity {
 
 
     }
+
+
 
 
 
