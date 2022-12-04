@@ -5,22 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.telopresto.R;
-import com.example.telopresto.TI.agregar_equipo_usaurioti;
-import com.example.telopresto.TI.listadoEquiposUsuario;
-import com.example.telopresto.dto.Equipo;
 import com.example.telopresto.dto.Solicitud;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class agregarSolicitud extends AppCompatActivity {
 
@@ -44,7 +35,7 @@ public class agregarSolicitud extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agregar_solicitud);
+        setContentView(R.layout.activity_agregar_solicitud_cliente);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("lista de equipos");

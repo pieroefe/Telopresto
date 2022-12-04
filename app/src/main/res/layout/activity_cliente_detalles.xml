@@ -11,9 +11,12 @@
         android:id="@+id/tv_producto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Titulo editable"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,10 +24,10 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="134dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_producto"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -32,100 +35,123 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="239dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Marca:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_marca_edit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_producto" />
+        app:layout_constraintTop_toTopOf="@+id/tv_marca_edit" />
 
     <TextView
         android:id="@+id/tv_caracteristicas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Caracteristicas:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_marca" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_caracteristicas_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_marca"
+        app:layout_constraintTop_toTopOf="@+id/tv_caracteristicas_edit"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_incluye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="41dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Incluye:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_caracteristicas" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_incluye_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_caracteristicas"
+        app:layout_constraintTop_toTopOf="@+id/tv_incluye_edit" />
 
     <TextView
         android:id="@+id/tv_stock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="46dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Stock:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_incluye" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_stock_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_incluye"
+        app:layout_constraintTop_toTopOf="@+id/tv_stock_edit" />
 
     <TextView
         android:id="@+id/tv_marca_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="112dp"
+        android:fontFamily="@font/inter"
         android:text="TextView"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/tv_caracteristicas_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_marca_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_caracteristicas"
         app:layout_constraintTop_toBottomOf="@+id/tv_marca_edit" />
 
     <TextView
         android:id="@+id/tv_incluye_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_caracteristicas_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_incluye"
         app:layout_constraintTop_toBottomOf="@+id/tv_caracteristicas_edit" />
 
     <TextView
         android:id="@+id/tv_stock_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_incluye_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_stock"
         app:layout_constraintTop_toBottomOf="@+id/tv_incluye_edit" />
 
     <Button
         android:id="@+id/btn_solicitar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/negro"
         android:text="Solicitar"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cancelar"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stock_edit" />
 
     <Button
         android:id="@+id/btn_cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginBottom="76dp"
+        android:backgroundTint="#D9D9D9"
         android:text="Cancelar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAllCaps="false"
+        android:textColor="@color/negro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_solicitar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"

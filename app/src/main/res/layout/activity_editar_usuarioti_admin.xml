@@ -10,13 +10,10 @@
         android:id="@+id/textView33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:fontFamily="@font/inter_semibold"
         android:text="Correo:"
         app:layout_constraintBottom_toBottomOf="@+id/correoUsuario"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView35"
         app:layout_constraintTop_toTopOf="@+id/correoUsuario"
         tools:ignore="UnknownId" />
 
@@ -24,13 +21,10 @@
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:fontFamily="@font/inter_semibold"
         android:text="Contraseña:"
         app:layout_constraintBottom_toBottomOf="@+id/contraseniaUsuario"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView36"
         app:layout_constraintTop_toTopOf="@+id/contraseniaUsuario"
         tools:ignore="UnknownId" />
 
@@ -53,40 +47,40 @@
         android:layout_width="199dp"
         android:layout_height="36dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nombreUsuario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView33"
         app:layout_constraintTop_toBottomOf="@+id/nombreUsuario" />
 
     <Button
         android:id="@+id/btn_cancelar_usuarioti2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:backgroundTint="#D9D9D9"
+        android:textColor="@color/negro"
         android:text="Cancelar"
         android:textAllCaps="false"
-        android:textColor="@color/negro"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationAdmmin"
         app:layout_constraintEnd_toEndOf="@+id/btn_editar_usuarioti2"
         app:layout_constraintStart_toStartOf="@+id/btn_editar_usuarioti2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_editar_usuarioti2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_editar_usuarioti2"
+        app:layout_constraintVertical_bias="0.075" />
 
     <TextView
         android:id="@+id/agregar_ti_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="121dp"
         android:layout_marginTop="34dp"
-        android:layout_marginEnd="122dp"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Agregar Usuario TI"
+        android:text="Editar Usuario TI"
         android:textSize="29sp"
         app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,24 +89,22 @@
         android:layout_width="199dp"
         android:layout_height="36dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/correoUsuario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView36"
         app:layout_constraintTop_toBottomOf="@+id/correoUsuario" />
 
     <TextView
         android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:fontFamily="@font/inter_semibold"
         android:text="Codigo PUCP: "
         app:layout_constraintBottom_toBottomOf="@+id/codigoPUCPUsuario"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView33"
         app:layout_constraintTop_toTopOf="@+id/codigoPUCPUsuario"
         app:layout_constraintVertical_bias="0.692"
         tools:ignore="UnknownId" />
@@ -133,18 +125,17 @@
         tools:ignore="UnknownId" />
 
 
-
     <EditText
         android:id="@+id/contraseniaUsuario"
         android:layout_width="199dp"
         android:layout_height="36dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btn_editar_usuarioti2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/codigoPUCPUsuario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView34"
         app:layout_constraintTop_toBottomOf="@+id/codigoPUCPUsuario" />
 
     <Button
@@ -154,11 +145,9 @@
         android:layout_marginStart="154dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="154dp"
-        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/negro"
         android:text="Editar"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cancelar_usuarioti2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
