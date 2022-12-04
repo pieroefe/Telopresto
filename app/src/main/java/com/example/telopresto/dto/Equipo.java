@@ -4,12 +4,20 @@ import android.media.audiofx.DynamicsProcessing;
 
 public class Equipo {
 
+    String id;
     String tipo;
     String marca;
     String caracteristicas;
     String incluye;
     int stock;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTipo() {
         return tipo;

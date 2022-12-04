@@ -6,20 +6,78 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.example.telopresto.R;
+import com.example.telopresto.dto.Equipo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Cliente_detalles extends AppCompatActivity {
 
-
+    FirebaseDatabase firebaseDatabase;
     BottomNavigationView bottomNavigationView;
+    TextView marcaText, caracText, incluyeText, stockText, tipoText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_detalles);
         setBottomNavigationView();
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("lista de equipos");
+
+        String id =  getIntent().getStringExtra("idEquipo");
+        tipoText = findViewById(R.id.tv_producto);
+        marcaText = findViewById(R.id.tv_marca_edit);
+        caracText = findViewById(R.id.tv_caracteristicas_edit);
+        incluyeText = findViewById(R.id.tv_incluye_edit);
+        stockText = findViewById(R.id.tv_stock_edit);
+
+        ref1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Equipo> listaEquipos = new ArrayList<>();
+                if (snapshot.exists()) {
+
+                    for(DataSnapshot snapshot1 : snapshot.getChildren()) {
+                        Equipo equipo = snapshot1.getValue(Equipo.class);
+                        listaEquipos.add(equipo);
+                    }
+
+                    for(Equipo equipo: listaEquipos){
+
+                        if(Objects.equals(equipo.getId(), id)){
+                              tipoText.setText(equipo.getTipo());
+                              marcaText.setText(equipo.getMarca());
+                              caracText.setText(equipo.getCaracteristicas());
+                              incluyeText.setText(equipo.getIncluye());
+                              stockText.setText(String.valueOf(equipo.getStock()));
+
+                        }
+
+                    }
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
 
     }
 
