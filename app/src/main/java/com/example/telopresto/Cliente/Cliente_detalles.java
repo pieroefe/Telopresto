@@ -57,7 +57,6 @@ public class Cliente_detalles extends AppCompatActivity {
                     }
 
                     for(Equipo equipo: listaEquipos){
-
                         if(Objects.equals(equipo.getId(), id)){
                               tipoText.setText(equipo.getTipo());
                               marcaText.setText(equipo.getMarca());

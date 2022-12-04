@@ -9,6 +9,7 @@ public class Solicitud {
     String tiempoDeSolicitud;
     String curso;
     String otros;
+    String estado;
 
     public String getTipo() {
         return tipo;
@@ -64,5 +65,13 @@ public class Solicitud {
 
     public void setOtros(String otros) {
         this.otros = otros;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

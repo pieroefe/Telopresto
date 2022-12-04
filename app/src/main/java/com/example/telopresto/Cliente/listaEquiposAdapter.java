@@ -37,31 +37,24 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
 
      Context context;
     ArrayList<Equipo> list;
-    ArrayList<String> listId;
-    FirebaseDatabase firebaseDatabase;
+
 
     public listaEquiposAdapter(Context context, ArrayList<Equipo> list) {
         this.context = context;
         this.list = list;
 
     }
-        public class myViewHolder extends RecyclerView.ViewHolder{
+
+    public class myViewHolder extends RecyclerView.ViewHolder{
 
             TextView tipo, disponibles;
 
         Equipo equipo;
 
-            public myViewHolder(@NonNull View itemView) {
-                super(itemView);
-//                tipo =itemView.findViewById(R.id.textTipo2);
-//                marca =itemView.findViewById(R.id.textViewDisponibles);
-//                marcaText =itemView.findViewById(R.id.textViewMarca);
-//                caraText =itemView.findViewById(R.id.textViewCaract);
-//                incluyeText =itemView.findViewById(R.id.textViewIncluye);
+        public myViewHolder(@NonNull View itemView) {
+            super(itemView);
 
-
-
-            }
+        }
     }
 
 
@@ -97,15 +90,6 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
         });
 
 
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -113,22 +97,6 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
     public int getItemCount() {
         return list.size();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
