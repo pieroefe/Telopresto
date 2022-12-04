@@ -36,7 +36,7 @@ public class Cliente_detalles extends AppCompatActivity {
         setBottomNavigationView();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("lista de equipos");
+        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("listaEquipos");
 
         String id =  getIntent().getStringExtra("idEquipo");
         tipoText = findViewById(R.id.tv_producto);
@@ -57,6 +57,7 @@ public class Cliente_detalles extends AppCompatActivity {
                     }
 
                     for(Equipo equipo: listaEquipos){
+
                         if(Objects.equals(equipo.getId(), id)){
                               tipoText.setText(equipo.getTipo());
                               marcaText.setText(equipo.getMarca());

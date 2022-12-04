@@ -68,7 +68,7 @@ public class Cliente_lista extends AppCompatActivity {
 
         equipos = new ArrayList<>();
 
-        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("lista de equipos");
+        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("listaEquipos");
 
         ref1.addValueEventListener(new ValueEventListener() {
             @Override

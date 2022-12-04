@@ -3,6 +3,7 @@ package com.example.telopresto.TI;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.telopresto.Cliente.Cliente_lista;
+import com.example.telopresto.Cliente.listaEquiposAdapter;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
 import com.firebase.ui.auth.AuthUI;
@@ -37,13 +40,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class listadoEquiposUsuario extends AppCompatActivity {
 
-    ValueEventListener valueEventListener;
     RecyclerView recyclerView;
     ArrayList<Equipo> listaEquipos;
-    DatabaseReference databaseReference;
     listadoEquiposUsuarioAdapter adapter;
     FirebaseDatabase firebaseDatabase;
     BottomNavigationView bottomNavigationView;
@@ -67,34 +69,29 @@ public class listadoEquiposUsuario extends AppCompatActivity {
 
 
 
-        //TODO PONER NOMBRE DE REFERENCIA Y CHILD
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference= firebaseDatabase.getReference("usuarioTI").child("");
 
-        listaEquipos=new ArrayList<>();
-       /* recyclerView=findViewById(R.id.recyclerViewListaEquipos);
-        recyclerView.setLayoutManager(new LinearLayoutManager(listadoEquiposUsuario.this));
-        adapter = new listadoEquiposUsuarioAdapter(this,listaEquipos);
-        recyclerView.setAdapter(adapter);
-        valueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+        listaEquipos = new ArrayList<>();
+
+        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("listaEquipos");
+
+        ref1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    listaEquipos.clear();
-                    for (DataSnapshot datasnap : snapshot.getChildren()) {
-                        Equipo equipo = datasnap.getValue(Equipo.class);
 
 
-                        listaEquipos.add(equipo);
+                for(DataSnapshot snapshot1: snapshot.getChildren()){
 
-                    }
+                    Equipo equipo = snapshot1.getValue(Equipo.class);
+                    listaEquipos.add(equipo);
 
-                    adapter.notifyDataSetChanged();
-                } else {
 
-                    listaEquipos.clear();
-                    adapter.notifyDataSetChanged();
                 }
+                recyclerView = findViewById(R.id.recyclerEquipoListado);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setLayoutManager(new LinearLayoutManager(listadoEquiposUsuario.this));
+                recyclerView.setAdapter(adapter);
+
             }
 
             @Override
@@ -103,7 +100,7 @@ public class listadoEquiposUsuario extends AppCompatActivity {
             }
         });
 
-        */
+        adapter = new listadoEquiposUsuarioAdapter(this,listaEquipos);
     }
 
 

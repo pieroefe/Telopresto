@@ -92,7 +92,7 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
             equipo.setTipo(spinner.getSelectedItem().toString());
         }
 
-        refequipos.child("lista de equipos").push().setValue(equipo).addOnSuccessListener(unused -> {
+        refequipos.child("listaEquipos").push().setValue(equipo).addOnSuccessListener(unused -> {
             Toast.makeText(agregar_equipo_usaurioti.this, "Guardado correctamente", Toast.LENGTH_SHORT).show();
         });
 

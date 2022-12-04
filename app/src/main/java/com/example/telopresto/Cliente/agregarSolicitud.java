@@ -42,7 +42,7 @@ public class agregarSolicitud extends AppCompatActivity {
         setContentView(R.layout.activity_agregar_solicitud_cliente);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("lista de equipos");
+        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("listaEquipos");
 
         motivoText = findViewById(R.id.motivoText);
         tiempoText = findViewById(R.id.tiempoText);
