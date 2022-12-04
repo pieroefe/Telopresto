@@ -2,6 +2,7 @@ package com.example.telopresto.Cliente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.example.telopresto.R;
@@ -67,7 +69,7 @@ public class Cliente_lista extends AppCompatActivity {
                 }
                 recyclerView = findViewById(R.id.recyclerViewEquiposListado);
                 recyclerView.setHasFixedSize(true);
-                recyclerView.setLayoutManager(new LinearLayoutManager(Cliente_lista.this));
+                recyclerView.setLayoutManager(new GridLayoutManager(Cliente_lista.this, 2));
                 recyclerView.setAdapter(listaEquiposAdapter);
 
             }
