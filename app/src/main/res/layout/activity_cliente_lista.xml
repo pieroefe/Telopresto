@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Cliente.Cliente_lista">
 
-    <TextView
-        android:id="@+id/tv_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
-        android:text="Bienvenido a telopresto!"
-        android:textSize="35dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"
         android:layout_width="match_parent"
@@ -33,17 +20,16 @@
 
     <SearchView
         android:id="@+id/searchView3"
-        android:layout_width="321dp"
-        android:layout_height="43dp"
+        android:layout_width="298dp"
+        android:layout_height="32dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewEquiposListado"
+        android:background="@drawable/borde_redondo_search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEquiposListado"

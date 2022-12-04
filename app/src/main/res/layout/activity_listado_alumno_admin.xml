@@ -37,8 +37,6 @@
         android:id="@+id/searchView2"
         android:layout_width="298dp"
         android:layout_height="32dp"
-
-
         android:layout_marginTop="24dp"
         android:background="@drawable/borde_redondo_search"
         app:layout_constraintEnd_toEndOf="parent"
