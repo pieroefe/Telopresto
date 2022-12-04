@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.telopresto.R;
@@ -37,6 +38,7 @@ public class Cliente_lista extends AppCompatActivity {
     listaEquiposAdapter listaEquiposAdapter;
     FirebaseDatabase firebaseDatabase;
     ArrayList<Equipo> equipos;
+    SearchView searchView;
 
     BottomNavigationView bottomNavigationView;
 
@@ -50,6 +52,19 @@ public class Cliente_lista extends AppCompatActivity {
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();
+        searchView = findViewById(R.id.searchView);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return true;
+            }
+        });
 
         equipos = new ArrayList<>();
 

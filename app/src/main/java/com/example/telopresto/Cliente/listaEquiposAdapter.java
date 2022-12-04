@@ -27,6 +27,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,19 +47,21 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
     }
         public class myViewHolder extends RecyclerView.ViewHolder{
 
+            TextView tipo, disponibles;
+
         Equipo equipo;
 
-        public myViewHolder(@NonNull View itemView) {
-            super(itemView);
-           /* tipoText =itemView.findViewById(R.id.textTipo2);
-            stockText =itemView.findViewById(R.id.textViewDisponibles);
-            marcaText =itemView.findViewById(R.id.textViewMarca);
-            caraText =itemView.findViewById(R.id.textViewCaract);
-            incluyeText =itemView.findViewById(R.id.textViewIncluye);
+            public myViewHolder(@NonNull View itemView) {
+                super(itemView);
+//                tipo =itemView.findViewById(R.id.textTipo2);
+//                marca =itemView.findViewById(R.id.textViewDisponibles);
+//                marcaText =itemView.findViewById(R.id.textViewMarca);
+//                caraText =itemView.findViewById(R.id.textViewCaract);
+//                incluyeText =itemView.findViewById(R.id.textViewIncluye);
 
-            */
 
-        }
+
+            }
     }
 
 
