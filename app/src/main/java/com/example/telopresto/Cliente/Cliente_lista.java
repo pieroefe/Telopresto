@@ -85,6 +85,8 @@ public class Cliente_lista extends AppCompatActivity {
 
 
 
+
+
     public void setBottomNavigationView(){
         bottomNavigationView = findViewById(R.id.bottomNavigationCliente);
         bottomNavigationView.clearAnimation();

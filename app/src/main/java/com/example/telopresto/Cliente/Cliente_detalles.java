@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -79,6 +80,20 @@ public class Cliente_detalles extends AppCompatActivity {
 
         });
 
+    }
+
+    public void solicitarEquipo(View view) {
+
+        Intent intent = new Intent(Cliente_detalles.this, agregarSolicitud.class);
+        startActivity(intent);
+
+
+    }
+
+
+    public void cancelar(View view){
+        Intent intent = new Intent(Cliente_detalles.this, Cliente_lista.class);
+        startActivity(intent);
     }
 
 
