@@ -2,25 +2,90 @@ package com.example.telopresto.Cliente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.example.telopresto.R;
+import com.example.telopresto.TI.agregar_equipo_usaurioti;
+import com.example.telopresto.TI.listadoEquiposUsuario;
+import com.example.telopresto.dto.Equipo;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class Cliente_lista extends AppCompatActivity {
 
+    RecyclerView recyclerView;
+    listaEquiposAdapter listaEquiposAdapter;
+    FirebaseDatabase firebaseDatabase;
+    ArrayList<Equipo> equipos;
 
     BottomNavigationView bottomNavigationView;
+
+    @SuppressLint("MissingInflatedId")
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_lista);
         setBottomNavigationView();
+
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        equipos = new ArrayList<>();
+
+        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("lista de equipos");
+
+        ref1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                for(DataSnapshot snapshot1: snapshot.getChildren()){
+
+                    Equipo equipo = snapshot1.getValue(Equipo.class);
+                    equipos.add(equipo);
+
+                }
+                recyclerView = findViewById(R.id.recyclerViewEquiposListado);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setLayoutManager(new LinearLayoutManager(Cliente_lista.this));
+                recyclerView.setAdapter(listaEquiposAdapter);
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        listaEquiposAdapter = new listaEquiposAdapter(this, equipos);
+
+
     }
+
+
 
     public void setBottomNavigationView(){
         bottomNavigationView = findViewById(R.id.bottomNavigationCliente);

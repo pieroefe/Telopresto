@@ -72,7 +72,7 @@ public class listadoEquiposUsuario extends AppCompatActivity {
         databaseReference= firebaseDatabase.getReference("usuarioTI").child("");
 
         listaEquipos=new ArrayList<>();
-        recyclerView=findViewById(R.id.recyclerViewListaEquipos);
+       /* recyclerView=findViewById(R.id.recyclerViewListaEquipos);
         recyclerView.setLayoutManager(new LinearLayoutManager(listadoEquiposUsuario.this));
         adapter = new listadoEquiposUsuarioAdapter(this,listaEquipos);
         recyclerView.setAdapter(adapter);
@@ -102,6 +102,8 @@ public class listadoEquiposUsuario extends AppCompatActivity {
 
             }
         });
+
+        */
     }
 
 

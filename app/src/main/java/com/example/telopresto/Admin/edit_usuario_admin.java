@@ -1,4 +1,4 @@
-package com.example.telopresto;
+package com.example.telopresto.Admin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.telopresto.Admin.listadoAlumnoAdmin;
 import com.example.telopresto.Admin.listadoUsuarioAdmin;
 import com.example.telopresto.Admin.reportesAdmin;
+import com.example.telopresto.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
