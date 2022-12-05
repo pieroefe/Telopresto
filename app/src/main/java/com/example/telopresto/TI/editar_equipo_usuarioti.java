@@ -46,7 +46,7 @@ public class editar_equipo_usuarioti extends AppCompatActivity {
     Spinner tipoSpinner, marcaSpinner;
     String id;
     ArrayList<String> listaMarcas;
-    ArrayList<String> listaTipo = new ArrayList<>();
+    ArrayList<String> listaTipo;
 
 
     @Override
@@ -75,6 +75,14 @@ public class editar_equipo_usuarioti extends AppCompatActivity {
         incluyeText = findViewById(R.id.editarIncluyeDispositivo);
         stocText = findViewById(R.id.editarStockDispositivo);
 
+        listaTipo = new ArrayList<>();
+        if(listaTipo.isEmpty()){
+            listaTipo.add("Otro");
+            listaTipo.add("Laptop");
+            listaTipo.add("Celular");
+            listaTipo.add("Tablet");
+            listaTipo.add("Monitor");
+        }
 
         ref1.addValueEventListener(new ValueEventListener() {
             @Override
@@ -84,10 +92,15 @@ public class editar_equipo_usuarioti extends AppCompatActivity {
 
                     for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                         String tipoString = snapshot1.child("tipo").getValue(String.class);
-                        listaTipo.add(tipoString);
+                        if(tipoString.equals("Laptop") || tipoString.equals("Celular")|| tipoString.equals("Tablet")||tipoString.equals("Monitor")){
+
+                        }else{
+                            listaTipo.add(tipoString);
+                        }
 
                     }
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(editar_equipo_usuarioti.this, android.R.layout.simple_spinner_dropdown_item, listaTipo);
+
                     adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
                     tipoSpinner.setAdapter(adapter);
                 }
