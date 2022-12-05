@@ -24,7 +24,9 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
 
     EditText opcionOtro, caracteristicasDispositivo, incluyeDispositivo, stockDispositivo, marcaDispositivo;
     ArrayList<String> listaMarcas = new ArrayList<>();
-    ArrayList<String> listaId = new ArrayList<>();
+  /*  ArrayList<String> listaId = new ArrayList<>();
+
+   */
 
 
     Spinner spinner;
@@ -63,11 +65,11 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
     public void guardarEquipo(View view) {
 
         DatabaseReference ref = firebaseDatabase.getReference();
-        DatabaseReference refequipos = ref.child("usuarioTI");
+        DatabaseReference refequipos = ref.child("usuarioTI").child("listaEquipos");
 
         Equipo equipo = new Equipo();
 
-        if (listaId.isEmpty()){
+    /*    if (listaId.isEmpty()){
             listaId.add("0");
         }
 
@@ -79,9 +81,12 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
         }
         listaId.add(String.valueOf(contador+1));
 
+     */
+        String id = refequipos.push().getKey();
+        equipo.setId(id);
         equipo.setCaracteristicas(caracteristicasDispositivo.getText().toString());
         equipo.setIncluye(incluyeDispositivo.getText().toString());
-        equipo.setStock(Integer.parseInt(stockDispositivo.getText().toString()));
+        equipo.setStock(stockDispositivo.getText().toString());
         equipo.setMarca(marcaDispositivo.getText().toString());
 
         if(spinner.getSelectedItem().toString().equals("Otro")){
@@ -92,7 +97,8 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
             equipo.setTipo(spinner.getSelectedItem().toString());
         }
 
-        refequipos.child("listaEquipos").push().setValue(equipo).addOnSuccessListener(unused -> {
+
+        refequipos.child(id).setValue(equipo).addOnSuccessListener(unused -> {
             Toast.makeText(agregar_equipo_usaurioti.this, "Guardado correctamente", Toast.LENGTH_SHORT).show();
         });
 

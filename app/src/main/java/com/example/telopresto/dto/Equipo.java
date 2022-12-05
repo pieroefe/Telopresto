@@ -9,7 +9,7 @@ public class Equipo {
     String marca;
     String caracteristicas;
     String incluye;
-    int stock;
+    String stock;
 
     public String getId() {
         return id;
@@ -51,11 +51,11 @@ public class Equipo {
         this.incluye = incluye;
     }
 
-    public int getStock() {
+    public String getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(String stock) {
         this.stock = stock;
     }
 

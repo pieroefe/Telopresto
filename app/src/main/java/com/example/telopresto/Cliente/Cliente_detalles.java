@@ -36,7 +36,7 @@ public class Cliente_detalles extends AppCompatActivity {
         setBottomNavigationView();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref1  = firebaseDatabase.getReference("usuarioTI").child("listaEquipos");
+        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
 
         String id =  getIntent().getStringExtra("idEquipo");
         tipoText = findViewById(R.id.tv_producto);
