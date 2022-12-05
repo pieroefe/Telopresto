@@ -2,25 +2,125 @@ package com.example.telopresto.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.telopresto.R;
+import com.example.telopresto.dto.Usuario;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class listadoUsuarioAdmin extends AppCompatActivity {
 
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageReference = storage.getReference();
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+    private List<Usuario> usuariosListar = new ArrayList<Usuario>();
+    private Context context;
+
+
+
     BottomNavigationView bottomNavigationView;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_usuario_admin);
-        setBottomNavigationView();
+
+        getItems();
+
+
+
     }
+
+
+    public void getItems(){
+        firebaseDatabase.getReference().child("usuario").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot children : snapshot.getChildren()){
+                    Usuario usuario = children.getValue(Usuario.class);
+
+                    System.out.println("aqui la lista de clientes " + usuariosListar );
+                    usuariosListar.add(usuario);
+
+                }
+
+
+
+
+                Adapter_ListaUsuariosTI listaTIAdapter = new Adapter_ListaUsuariosTI();
+                listaTIAdapter.setusuarioTIList(usuariosListar);
+                listaTIAdapter.setContext(listadoUsuarioAdmin.this);
+                RecyclerView recyclerView = findViewById(R.id.rv_listaCliente);
+
+                recyclerView.setAdapter(listaTIAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(listadoUsuarioAdmin.this));
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        getMenuInflater().inflate(R.menu.menu_lista_usuariosti,menu);
+        return true;
+
+    }
+
+
+
+
+
+
+
+
+
+
+    public void btnMenu(MenuItem item){
+        Intent intent = new Intent(this, agregar_usuarioti_admin.class);
+        startActivity(intent);
+
+    }
+
+
+
+
 
     public void setBottomNavigationView(){
         bottomNavigationView = findViewById(R.id.bottomNavigationAdmmin);
@@ -45,4 +145,5 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
             }
         });
     }
+
 }

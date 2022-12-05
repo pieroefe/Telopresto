@@ -10,14 +10,14 @@
         android:id="@+id/Register_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/inter_bold"
         android:text="Registrarse"
         android:textAlignment="center"
         android:textColor="#2F2C2C"
         android:textSize="29sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,8 +40,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:hint="Correo PUCP"
-        app:hintTextColor="@color/azul"
         app:endIconMode="clear_text"
+        app:hintTextColor="@color/azul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageRegistro"
@@ -56,7 +56,10 @@
             android:inputType="textEmailAddress"
             android:textAlignment="center"
             android:textSize="13sp" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirmpasswordInputLayout"
@@ -67,8 +70,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:hint="Confirmar contraseña"
-        app:hintTextColor="@color/azul"
         app:endIconMode="password_toggle"
+        app:hintTextColor="@color/azul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
@@ -91,12 +94,12 @@
         android:layout_width="259dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:hint="Contraseña"
-        app:hintTextColor="@color/azul"
-        app:endIconMode="password_toggle"
-        android:layout_marginTop="10dp"
         app:boxStrokeColor="@color/azul"
+        app:endIconMode="password_toggle"
+        app:hintTextColor="@color/azul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correoInputLayout"
@@ -113,21 +116,21 @@
             android:textSize="13sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <Button
         android:id="@+id/registroBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#2F2C2C"
         android:fontFamily="@font/inter_semibold"
         android:onClick="validarRegistro"
         android:text="Registrarse"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmpasswordInputLayout" />
-
+        app:layout_constraintTop_toBottomOf="@+id/codigoInputLayout" />
 
     <TextView
         android:id="@+id/registrarText"
@@ -157,6 +160,24 @@
         app:layout_constraintTop_toBottomOf="@+id/registrarText"
         app:rippleColor="#00FFFFFF"
         app:strokeColor="#00FFFFFF" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/codigoInputLayout"
+        android:layout_width="257dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmpasswordInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/codigoInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su código" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

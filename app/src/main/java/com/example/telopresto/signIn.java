@@ -31,6 +31,7 @@ public class signIn extends AppCompatActivity {
 
     boolean correoValido = true;
     boolean passwordValido = true;
+    boolean codigoValido = true;
     boolean verifyPasswordValido = true;
 
     @Override
@@ -39,7 +40,7 @@ public class signIn extends AppCompatActivity {
         setContentView(R.layout.sign_in);
         getSupportActionBar().setTitle("Registro de usuario");
         firebaseAuth = FirebaseAuth.getInstance();
-        ;
+
     }
 
     public void validarRegistro(View view) {
@@ -47,8 +48,13 @@ public class signIn extends AppCompatActivity {
         TextInputLayout correo = findViewById(R.id.correoInputLayout);
         TextInputLayout password = findViewById(R.id.passwordInputLayout);
         TextInputLayout verifyPassword = findViewById(R.id.confirmpasswordInputLayout);
+        TextInputLayout codigo = findViewById(R.id.codigoInputLayout);
 
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z.]+";
+
+        System.out.println("------AQUI EMPIEZA LA PRUEBA--------");
+        System.out.println("tenemos el codigo de la vista : " + codigo.getEditText().getText().toString());
+
         boolean correoValido = true;
         if (correo.getEditText().getText().toString() != null && !correo.getEditText().getText().toString().equals("")) {
             if (!correo.getEditText().getText().toString().matches(emailPattern)) {
@@ -70,6 +76,17 @@ public class signIn extends AppCompatActivity {
             passwordValido = false;
         }
 
+        boolean codigoValido = true;
+        if (codigo.getEditText().getText().toString() != null && !codigo.getEditText().getText().toString().equals("")) {
+            codigo.setErrorEnabled(false);
+        } else {
+            codigo.setError("Ingrese una contraseña");
+            codigoValido = false;
+        }
+
+
+
+
         if (verifyPassword.getEditText().getText().toString() != null && !verifyPassword.getEditText().getText().toString().equals("")) {
 
             verifyPassword.setErrorEnabled(false);
@@ -78,7 +95,22 @@ public class signIn extends AppCompatActivity {
             verifyPasswordValido = false;
         }
 
-        if (correoValido && passwordValido && verifyPasswordValido) {
+        System.out.println(verifyPassword.getEditText().getText().toString() );
+        System.out.println(password.getEditText().getText().toString()  );
+
+
+        boolean repeValido = true;
+        if(verifyPassword.getEditText().getText().toString().equals(password.getEditText().getText().toString())){
+            verifyPassword.setErrorEnabled(false);
+
+        }else {
+            verifyPassword.setError("Debe verificar que las contraseñas sean iguales");
+            repeValido = false;
+
+        }
+
+
+        if (correoValido && passwordValido && verifyPasswordValido && repeValido && codigoValido) {
             Log.d("task", "Registro valido");
 
             firebaseAuth.createUserWithEmailAndPassword(correo.getEditText().getText().toString(), password.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -89,10 +121,11 @@ public class signIn extends AppCompatActivity {
                         firebaseAuth.getCurrentUser().sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Log.d("task", "Envion de correo de verifiacion exitoso");
+                                Log.d("task", "Envio de correo de verifiacion exitoso");
                                 String key = databaseReference.push().getKey();
                                 databaseReference.child(key).child("correo").setValue(correo.getEditText().getText().toString());
                                 databaseReference.child(key).child("rol").setValue("cliente");
+                                databaseReference.child(key).child("codigo").setValue(codigo.getEditText().getText().toString());
                                 databaseReference.child(key).child("key").setValue(key);
                                 Intent intent = new Intent(signIn.this, Login_principal.class);
                                 intent.putExtra("exito", "Revise su correo para la verificacion de su cuenta");

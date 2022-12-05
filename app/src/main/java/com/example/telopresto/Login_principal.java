@@ -99,15 +99,47 @@ public class Login_principal extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (firebaseAuth.getCurrentUser().isEmailVerified()) {
-                                                Log.d("mes", correo.getEditText().getText().toString());
-                                                //Verificamos si es administrador
-                                                databaseReference.child("usuario").addListenerForSingleValueEvent(new ValueEventListener() {
+                                                Log.d("correo", correo.getEditText().getText().toString());
+                                                //Verificamos que rol posee el usuario
+                                                databaseReference.child("usuario").orderByChild("correo").equalTo(correo.getEditText().getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
                                                     @Override
                                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                         if (snapshot.getValue() != null){
+                                                            System.out.println(snapshot.getChildrenCount());
+                                                            int i=0;
                                                             for (DataSnapshot children : snapshot.getChildren()){
-                                                                Usuario usuario = children.getValue(Usuario.class);
-                                                                if (usuario.getCorreo().equals(correo.getEditText().getText().toString())){
+                                                                i++;
+                                                                System.out.println(i);
+                                                                //Usuario usuario = children.getValue(Usuario.class);
+                                                                Usuario usuario = new Usuario();
+                                                                String correo_usu=children.child("correo").getValue(String.class);
+                                                                String rol_usu=children.child("rol").getValue(String.class);
+                                                                String codigo_usu=children.child("codigo").getValue(String.class);
+                                                                String key_usu=children.child("key").getValue(String.class);
+                                                                usuario.setCodigo(codigo_usu);
+                                                                usuario.setKey(key_usu);
+                                                                usuario.setRol(rol_usu);
+                                                                usuario.setCorreo(correo_usu);
+
+
+
+                                                                System.out.println("-----AQUI UNA PRUEBA-------");
+
+                                                                System.out.println("EL VALOR DEL USUARIO ES: " + usuario);
+
+
+                                                                System.out.println("EL VALOR DEL USUARIO ES: " + correo.getEditText().getText().toString());
+                                                                System.out.println("EL VALOR DEL USUARIO ES: " + password.getEditText().getText().toString());
+                                                                System.out.println("EL VALOR DEL USUARIO ES: " + firebaseAuth.getCurrentUser().getEmail());
+
+
+                                                                //La parte comentada deberia salir
+                                                                System.out.println(usuario.getCorreo());
+                                                                System.out.println(usuario.getRol());
+
+
+                                                                if (usuario.getCorreo() != null && usuario.getCorreo().equals(correo.getEditText().getText().toString())){
+
                                                                     if(usuario.getRol().equals("administrador")) {
                                                                         Intent intent = new Intent(Login_principal.this, listadoUsuarioAdmin.class);
                                                                         intent.putExtra("key",usuario.getKey());
@@ -118,6 +150,7 @@ public class Login_principal extends AppCompatActivity {
                                                                         intent1.putExtra("key",usuario.getKey());
                                                                         startActivity(intent1);
                                                                     }
+
                                                                     if(usuario.getRol().equals("cliente")) {
 
                                                                         Intent intent2 = new Intent(Login_principal.this, Cliente_lista.class);
@@ -125,6 +158,8 @@ public class Login_principal extends AppCompatActivity {
                                                                         startActivity(intent2);
                                                                     }
                                                                 }
+
+                                                                //break;
                                                             }
                                                         }
                                                     }

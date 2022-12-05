@@ -2,21 +2,28 @@ package com.example.telopresto.dto;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements  Serializable{
 
     private String correo;
     private String codigo;
     private String rol;
     private String key;
 
-    public Usuario(String correo, String codigo, String rol, String key) {
+    private String filename;
+
+
+
+    public Usuario() {
+    }
+
+    public Usuario(String correo, String codigo, String rol, String key, String filename) {
         this.correo = correo;
         this.codigo = codigo;
         this.rol = rol;
         this.key = key;
-    }
-
-    public Usuario() {
+        this.filename = filename;
     }
 
     public String getCorreo() {
@@ -50,4 +57,20 @@ public class Usuario {
     public void setKey(String key) {
         this.key = key;
     }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public String getDetalleAImprimir(){
+        return "Correo: "+this.correo+"\n";
+
+    }
+
+
+
 }
