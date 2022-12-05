@@ -200,33 +200,37 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_programas_edit" />
 
     <Button
-        android:id="@+id/btn_solicitar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/negro"
-        android:onClick="solicitarEquipo"
-        android:text="Solicitar"
+        android:id="@+id/buttoncheck"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="128dp"
+        android:backgroundTint="#D9D9D9"
+        android:drawableBottom="@drawable/ic_check"
+        android:fontFamily="@font/inter_semibold"
+        android:textAlignment="center"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        android:textColor="#2F2C2C"
+        app:layout_constraintBottom_toBottomOf="@+id/buttoncancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tipo_edit" />
+        app:layout_constraintTop_toTopOf="@+id/buttoncancel"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btn_cancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:id="@+id/buttoncancel"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="128dp"
         android:backgroundTint="#D9D9D9"
-        android:onClick="cancelar"
-        android:text="Cancelar"
+        android:drawableBottom="@drawable/ic_cancel"
+        android:fontFamily="@font/inter_semibold"
+        android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/negro"
+        android:textColor="#2F2C2C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_solicitar" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttoncheck"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tipo_edit" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"
