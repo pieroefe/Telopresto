@@ -18,7 +18,7 @@ public class reportesAdmin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listado_equipos_admin);
+        setContentView(R.layout.reportes_admin);
         setBottomNavigationView();
     }
 

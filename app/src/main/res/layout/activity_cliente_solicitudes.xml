@@ -6,26 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Cliente.Cliente_solicitudes">
 
+
     <TextView
         android:id="@+id/tv_titulo_sol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Mis solicitudes"
         android:textSize="35dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
+        android:text="Mis solicitudes"
+        app:layout_constraintEnd_toStartOf="@+id/agregarSolicitudesBtn"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_solicitudes"
-        android:layout_width="409dp"
-        android:layout_height="658dp"
+        android:layout_width="351dp"
+        android:layout_height="547dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationCliente"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_sol" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_sol"
+        app:layout_constraintVertical_bias="0.944" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"
@@ -38,6 +45,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/agregarSolicitudesBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_redondo"
+        android:drawableTop="@drawable/add_item2"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/rv_solicitudes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -20,51 +20,43 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="120dp"
-        android:text="Agregar Dispositivo"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/inter_bold"
         android:textSize="20sp"
+        android:text="Agregar Dispositivo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Nombre del Dispositivo: "
-        app:layout_constraintBottom_toBottomOf="@+id/nombreDispositivoUsuario"
-        app:layout_constraintEnd_toStartOf="@+id/nombreDispositivoUsuario"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nombreDispositivoUsuario"
-        app:layout_constraintVertical_bias="0.538" />
-
     <EditText
         android:id="@+id/cracateristicasDispositivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="188dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/incluyeDispositivoUsario"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/marcaequipo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/marcaequipo" />
 
     <Button
         android:id="@+id/btnAgregarDispositivoUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="154dp"
+        android:backgroundTint="@color/negro"
+        android:onClick="guardarEquipo"
         android:text="Agregar"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stockUsuario" />
 
@@ -72,109 +64,157 @@
         android:id="@+id/btnCancelarAgregarUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="32dp"
+        android:backgroundTint="#D9D9D9"
         android:onClick="cancelar"
         android:text="Cancelar"
+        android:textAllCaps="false"
+        android:textColor="@color/negro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAgregarDispositivoUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarDispositivoUsuario"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:text="Marca:"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintTop_toTopOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.2" />
+        android:layout_marginStart="32dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Tipo de dispositivo:"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnertipo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinnertipo"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Caracteristicas:"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/cracateristicasDispositivo"
-        app:layout_constraintEnd_toStartOf="@+id/cracateristicasDispositivo"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
         app:layout_constraintTop_toTopOf="@+id/cracateristicasDispositivo"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.562" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="222dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/spinnertipo"
+        android:layout_width="188dp"
+        android:layout_height="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/cracateristicasDispositivo"
+        android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreDispositivoUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/stockUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="199dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="number"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/btnAgregarDispositivoUsuario"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/incluyeDispositivoUsario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/incluyeDispositivoUsario" />
 
     <EditText
         android:id="@+id/incluyeDispositivoUsario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="188dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bordes_redondos_edittext"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/stockUsuario"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/cracateristicasDispositivo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/cracateristicasDispositivo" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Incluye:"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/incluyeDispositivoUsario"
-        app:layout_constraintEnd_toStartOf="@+id/incluyeDispositivoUsario"
-        app:layout_constraintTop_toTopOf="@+id/incluyeDispositivoUsario"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="@+id/incluyeDispositivoUsario" />
 
     <EditText
-        android:id="@+id/nombreDispositivoUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:ems="8"
+        android:id="@+id/opcionOtro"
+        android:layout_width="188dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bordes_redondos_edittext"
+        android:ems="10"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/spinnertipo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/spinnertipo" />
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="68dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Stock:"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/stockUsuario"
-        app:layout_constraintEnd_toStartOf="@+id/stockUsuario"
-        app:layout_constraintTop_toTopOf="@+id/stockUsuario"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/stockUsuario" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Si selecciono otro:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/opcionOtro"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="@+id/opcionOtro" />
+
+    <EditText
+        android:id="@+id/marcaequipo"
+        android:layout_width="188dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bordes_redondos_edittext"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/opcionOtro"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView32"
+        app:layout_constraintTop_toBottomOf="@+id/opcionOtro" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Marca:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/marcaequipo"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="@+id/marcaequipo"
+        app:layout_constraintVertical_bias="0.625" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

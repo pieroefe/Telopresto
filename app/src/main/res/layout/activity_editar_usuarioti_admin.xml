@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.agregar_usuarioti_admin">
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Correo:"
+        app:layout_constraintBottom_toBottomOf="@+id/correoUsuario"
+        app:layout_constraintStart_toStartOf="@+id/textView35"
+        app:layout_constraintTop_toTopOf="@+id/correoUsuario"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Contraseña:"
+        app:layout_constraintBottom_toBottomOf="@+id/contraseniaUsuario"
+        app:layout_constraintStart_toStartOf="@+id/textView36"
+        app:layout_constraintTop_toTopOf="@+id/contraseniaUsuario"
+        tools:ignore="UnknownId" />
+
+    <EditText
+        android:id="@+id/nombreUsuario"
+        android:layout_width="199dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bordes_redondos_edittext"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agregar_ti_title" />
+
+    <EditText
+        android:id="@+id/correoUsuario"
+        android:layout_width="199dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bordes_redondos_edittext"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/nombreUsuario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView33"
+        app:layout_constraintTop_toBottomOf="@+id/nombreUsuario" />
+
+    <Button
+        android:id="@+id/btn_cancelar_usuarioti2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D9D9D9"
+        android:textColor="@color/negro"
+        android:text="Cancelar"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationAdmmin"
+        app:layout_constraintEnd_toEndOf="@+id/btn_editar_usuarioti2"
+        app:layout_constraintStart_toStartOf="@+id/btn_editar_usuarioti2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_editar_usuarioti2"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <TextView
+        android:id="@+id/agregar_ti_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Editar Usuario TI"
+        android:textSize="29sp"
+        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/codigoPUCPUsuario"
+        android:layout_width="199dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bordes_redondos_edittext"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/correoUsuario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView36"
+        app:layout_constraintTop_toBottomOf="@+id/correoUsuario" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Codigo PUCP: "
+        app:layout_constraintBottom_toBottomOf="@+id/codigoPUCPUsuario"
+        app:layout_constraintStart_toStartOf="@+id/textView33"
+        app:layout_constraintTop_toTopOf="@+id/codigoPUCPUsuario"
+        app:layout_constraintVertical_bias="0.692"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Nombre y Apellido: "
+        app:layout_constraintBottom_toBottomOf="@+id/nombreUsuario"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nombreUsuario"
+        app:layout_constraintVertical_bias="0.692"
+        tools:ignore="UnknownId" />
+
+
+    <EditText
+        android:id="@+id/contraseniaUsuario"
+        android:layout_width="199dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bordes_redondos_edittext"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/codigoPUCPUsuario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/codigoPUCPUsuario" />
+
+    <Button
+        android:id="@+id/btn_editar_usuarioti2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="154dp"
+        android:backgroundTint="@color/negro"
+        android:text="Editar"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseniaUsuario" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationAdmmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_admin"
+        app:itemIconTint="@color/amarillo"
+        android:background="@color/azul"
+        app:labelVisibilityMode="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

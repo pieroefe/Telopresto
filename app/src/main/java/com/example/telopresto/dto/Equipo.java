@@ -1,19 +1,30 @@
 package com.example.telopresto.dto;
 
+import android.media.audiofx.DynamicsProcessing;
+
 public class Equipo {
 
-    String nombreDispositivo;
+    String id;
+    String tipo;
     String marca;
     String caracteristicas;
     String incluye;
-    int stock;
+    String stock;
 
-    public String getNombreDispositivo() {
-        return nombreDispositivo;
+    public String getId() {
+        return id;
     }
 
-    public void setNombreDispositivo(String nombreDispositivo) {
-        this.nombreDispositivo = nombreDispositivo;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getMarca() {
@@ -40,11 +51,16 @@ public class Equipo {
         this.incluye = incluye;
     }
 
-    public int getStock() {
+    public String getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(String stock) {
         this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return tipo;
     }
 }
