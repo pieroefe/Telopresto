@@ -18,7 +18,7 @@
         tools:layout_editor_absoluteY="-2dp">
 
         <ImageView
-            android:id="@+id/iv_foto_TI"
+            android:id="@+id/imageView4"
             android:layout_width="154dp"
             android:layout_height="95dp"
             android:layout_marginTop="15dp"
@@ -31,7 +31,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_nombre_usuarioti"
+                android:id="@+id/textTipoSoli"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -47,7 +47,20 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_edit_usuarioTi"
+                    android:id="@+id/addbtn"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#D9D9D9"
+                    android:drawableBottom="@drawable/ic_add"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#2F2C2C" />
+
+                <Button
+                    android:id="@+id/editbtn"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="10dp"
@@ -60,7 +73,7 @@
                     android:textColor="#2F2C2C" />
 
                 <Button
-                    android:id="@+id/btn_delete_usuarioTi"
+                    android:id="@+id/detallesBtn"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="10dp"

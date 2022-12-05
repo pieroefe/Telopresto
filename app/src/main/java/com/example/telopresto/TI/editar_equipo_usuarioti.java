@@ -61,14 +61,6 @@ public class editar_equipo_usuarioti extends AppCompatActivity {
 
         Log.d("msg123", id);
 
-/*
-        tipoSpinner = findViewById(R.id.editarNombreDispositivo);
-        marcaSpinner = findViewById(R.id.editarMarcaDispositivo);
-        caracText = findViewById(R.id.editarCaracteristicaDispositivo);
-        incluyeText = findViewById(R.id.editarIncluyeDispositivo);
-        stocText = findViewById(R.id.editarStockDispositivo);
- */
-
         tipoSpinner = findViewById(R.id.editarNombreDispositivo);
         marcaSpinner = findViewById(R.id.editarMarcaDispositivo);
         caracText = findViewById(R.id.editarCaracteristicaDispositivo);

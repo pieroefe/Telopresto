@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
-import android.media.audiofx.DynamicsProcessing;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,24 +14,14 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.telopresto.Cliente.Cliente_detalles;
-import com.example.telopresto.Cliente.listaEquiposAdapter;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
-import com.example.telopresto.dto.Usuario;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class listadoEquiposUsuarioAdapter extends RecyclerView.Adapter<listadoEquiposUsuarioAdapter.myViewHolder>{
 
@@ -75,7 +63,7 @@ public class listadoEquiposUsuarioAdapter extends RecyclerView.Adapter<listadoEq
 
         Equipo e= list.get(position);
         holder.equipo = e;
-        TextView tipoText = holder.itemView.findViewById(R.id.textTipo2);
+        TextView tipoText = holder.itemView.findViewById(R.id.textTipoSoli);
         TextView stockText = holder.itemView.findViewById(R.id.stock);
         ImageView img = holder.itemView.findViewById(R.id.imageView5);
 

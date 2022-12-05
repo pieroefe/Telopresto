@@ -109,11 +109,18 @@ public class agregarSolicitud extends AppCompatActivity {
 
     public void guardarsoli(View view){
 
+        DatabaseReference ref = firebaseDatabase.getReference();
+        DatabaseReference refSoli = ref.child("usuario").child("T60iOl8eXTSX7bVT0S4S3k0ueA73").child("solicitudes");
+
+        String id = refSoli.push().getKey();
+
+
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
 
+        solicitud.setId(id);
         solicitud.setMotivo(motivoText.getText().toString());
         solicitud.setCurso(cursoText.getText().toString());
         solicitud.setTiempoDeSolicitud(tiempoText.getText().toString());

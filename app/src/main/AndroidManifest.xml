@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Telopresto"
         tools:targetApi="31">
         <activity
-            android:name=".Solicitudes_detalle"
+            android:name=".TI.Solicitudes_detalle"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -50,11 +50,9 @@
         <activity
             android:name=".Login_principal"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -78,18 +76,27 @@
         </activity>
         <activity
             android:name=".Admin.agregar_usuarioti_admin"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".signIn"
-            android:exported="true"
+            android:exported="false"
             android:parentActivityName=".Login_principal">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".Cliente.agregarSolicitud"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+
         </activity>
         <activity
             android:name=".TI.solicitud_rechazada_usuaurioti"
@@ -135,9 +142,11 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+
         </activity>
         <activity
             android:name=".Cliente.Cliente_solicitudes_detalles"
@@ -148,7 +157,8 @@
         </activity>
         <activity
             android:name=".Cliente.Cliente_solicitudes"
-            android:exported="false">
+            android:exported="true">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
