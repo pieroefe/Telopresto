@@ -57,12 +57,14 @@
         android:id="@+id/bottomNavigationAdmmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="670dp"
         android:background="@color/azul"
         app:itemIconTint="@color/amarillo"
         app:labelVisibilityMode="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_admin" />
 
     <TextView
