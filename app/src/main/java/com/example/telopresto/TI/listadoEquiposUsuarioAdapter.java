@@ -79,7 +79,7 @@ public class listadoEquiposUsuarioAdapter extends RecyclerView.Adapter<listadoEq
                 Intent intent = new Intent(holder.itemView.getContext(), editar_equipo_usuarioti.class);
                 intent.putExtra("idEquipo2", id);
                 holder.itemView.getContext().startActivity(intent);
-
+                System.out.println(list.get((position)));
             }
         });
 
