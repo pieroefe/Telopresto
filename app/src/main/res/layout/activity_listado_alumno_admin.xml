@@ -14,38 +14,38 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="280dp"
-        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Usuarios"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/searchView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_listaCliente"
-        android:layout_width="306dp"
-        android:layout_height="575dp"
+        android:layout_width="334dp"
+        android:layout_height="536dp"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView2" />
 
     <SearchView
         android:id="@+id/searchView2"
         android:layout_width="301dp"
         android:layout_height="28dp"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_listaCliente"
+        android:background="@drawable/borde_redondo_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationAdmmin"

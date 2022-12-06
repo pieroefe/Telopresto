@@ -110,6 +110,18 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
+        android:id="@+id/tv_tiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Tiempo solicitud:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tiempo_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_tipo"
+        app:layout_constraintTop_toTopOf="@+id/tv_tiempo_edit"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
         android:id="@+id/tv_curso_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -170,7 +182,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_motivo_edit"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_motivo"
+        app:layout_constraintStart_toEndOf="@+id/tv_otros"
         app:layout_constraintTop_toBottomOf="@+id/tv_motivo_edit" />
 
     <TextView
@@ -183,7 +195,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_otros_edit"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_motivo"
+        app:layout_constraintStart_toEndOf="@+id/tv_programas"
         app:layout_constraintTop_toBottomOf="@+id/tv_otros_edit" />
 
     <TextView
@@ -196,8 +208,38 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_programas_edit"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_motivo"
+        app:layout_constraintStart_toEndOf="@+id/tv_tipo"
         app:layout_constraintTop_toBottomOf="@+id/tv_programas_edit" />
+
+    <TextView
+        android:id="@+id/tv_tiempo_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_tipo_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_tiempo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tipo_edit" />
+
+    <Button
+        android:id="@+id/buttoncancel"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="128dp"
+        android:backgroundTint="#D9D9D9"
+        android:drawableBottom="@drawable/ic_cancel"
+        android:fontFamily="@font/inter_semibold"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#2F2C2C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttoncheck"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tiempo_edit" />
 
     <Button
         android:id="@+id/buttoncheck"
@@ -213,24 +255,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/buttoncancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/buttoncancel"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/buttoncancel"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="128dp"
-        android:backgroundTint="#D9D9D9"
-        android:drawableBottom="@drawable/ic_cancel"
-        android:fontFamily="@font/inter_semibold"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#2F2C2C"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/buttoncheck"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tipo_edit" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"
