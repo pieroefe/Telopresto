@@ -96,8 +96,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
         </activity>
         <activity
             android:name=".TI.solicitud_rechazada_usuaurioti"
@@ -180,7 +178,7 @@
         </activity>
         <activity
             android:name=".SplashSreen"
-            android:exported="false"
+            android:exported="true"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <meta-data
                 android:name="android.app.lib_name"

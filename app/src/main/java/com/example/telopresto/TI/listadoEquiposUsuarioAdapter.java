@@ -63,7 +63,7 @@ public class listadoEquiposUsuarioAdapter extends RecyclerView.Adapter<listadoEq
 
         Equipo e= list.get(position);
         holder.equipo = e;
-        TextView tipoText = holder.itemView.findViewById(R.id.textTipoSoli);
+        TextView tipoText = holder.itemView.findViewById(R.id.textTipoSoli3);
         TextView stockText = holder.itemView.findViewById(R.id.stock);
         ImageView img = holder.itemView.findViewById(R.id.imageView5);
 

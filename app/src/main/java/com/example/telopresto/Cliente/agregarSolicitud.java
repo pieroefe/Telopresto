@@ -31,7 +31,6 @@ public class agregarSolicitud extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
 
     Spinner spinner, spinner2;
-    Solicitud solicitud = new Solicitud();
 
 
     EditText motivoText,tiempoText,cursoText, programasText, otroText;
@@ -109,16 +108,18 @@ public class agregarSolicitud extends AppCompatActivity {
 
     public void guardarsoli(View view){
 
-        DatabaseReference ref = firebaseDatabase.getReference();
-        DatabaseReference refSoli = ref.child("usuario").child("T60iOl8eXTSX7bVT0S4S3k0ueA73").child("solicitudes");
-
-        String id = refSoli.push().getKey();
 
 
+        Solicitud solicitud = new Solicitud();
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+
+        DatabaseReference refSoli = databaseReference.child("usuario").child(user.getUid());
+
+        String id = refSoli.push().getKey();
 
         solicitud.setId(id);
         solicitud.setMotivo(motivoText.getText().toString());
@@ -131,7 +132,7 @@ public class agregarSolicitud extends AppCompatActivity {
         solicitud.setEstado("Pendiente");
 
 
-        databaseReference.child("solicitudes").push().setValue(solicitud).addOnSuccessListener(unused -> {
+        refSoli.child(id).setValue(solicitud).addOnSuccessListener(unused -> {
             Toast.makeText(agregarSolicitud.this, "Solicitud enviada", Toast.LENGTH_SHORT).show();
         });
 

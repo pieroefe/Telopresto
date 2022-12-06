@@ -31,7 +31,7 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
 
     public class myViewHolder extends RecyclerView.ViewHolder{
 
-            TextView tipo, disponibles;
+        TextView tipo, disponibles;
 
         Equipo equipo;
 
@@ -54,7 +54,7 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
     public void onBindViewHolder(myViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Equipo e= list.get(position);
         holder.equipo = e;
-        TextView tipoText = holder.itemView.findViewById(R.id.textTipoSoli);
+        TextView tipoText = holder.itemView.findViewById(R.id.textTipoSoli3);
         TextView stockText = holder.itemView.findViewById(R.id.textViewDisponibles);
         tipoText.setText(e.getTipo());
         stockText.setText(String.valueOf(e.getStock()));
