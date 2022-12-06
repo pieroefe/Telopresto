@@ -23,7 +23,6 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
      Context context;
     ArrayList<Equipo> list;
 
-
     public listaEquiposAdapter(Context context, ArrayList<Equipo> list) {
         this.context = context;
         this.list = list;
