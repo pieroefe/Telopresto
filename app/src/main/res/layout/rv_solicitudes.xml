@@ -31,7 +31,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textTipoSoli"
+                    android:id="@+id/textTipoSoli3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -61,7 +61,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/tiempoSolicitudNum"
+                        android:id="@+id/tiempoSolicitudNum3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -106,7 +106,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/estadoSolicitudModificable"
+                        android:id="@+id/estadoSolicitud3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"

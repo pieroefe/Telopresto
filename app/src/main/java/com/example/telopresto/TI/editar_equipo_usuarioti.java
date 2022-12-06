@@ -144,9 +144,6 @@ public class editar_equipo_usuarioti extends AppCompatActivity {
         usuario.put("stock", stocText.getText().toString());
         usuario.put("tipo",  tipoSpinner.getSelectedItem().toString());
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        user = firebaseAuth.getCurrentUser();
-
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
 

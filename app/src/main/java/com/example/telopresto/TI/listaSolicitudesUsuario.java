@@ -46,13 +46,10 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
 
         solicitudes = new ArrayList<>();
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        user = firebaseAuth.getCurrentUser();
-
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child("T60iOl8eXTSX7bVT0S4S3k0ueA73");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
 
 
-        databaseReference.child("solicitudes").addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 

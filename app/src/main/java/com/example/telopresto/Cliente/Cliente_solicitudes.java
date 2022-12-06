@@ -68,7 +68,7 @@ public class Cliente_solicitudes extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
 
 
-        databaseReference.child("solicitudes").addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -76,7 +76,9 @@ public class Cliente_solicitudes extends AppCompatActivity {
                 for(DataSnapshot snapshot1: snapshot.getChildren()){
 
                     Solicitud solicitud = snapshot1.getValue(Solicitud.class);
-                    solicitudes.add(solicitud);
+                    if(solicitud.getEstado().equals("Pendiente")){
+                        solicitudes.add(solicitud);
+                    }
                 }
                 recyclerView = findViewById(R.id.rv_solicitudes);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Cliente_solicitudes.this));
