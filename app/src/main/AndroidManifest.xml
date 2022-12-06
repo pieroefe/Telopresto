@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Telopresto"
         tools:targetApi="31">
         <activity
+            android:name=".PerfilUsuarioTI"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MotivoSolicitudRechaza"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".TI.Solicitudes_detalle"
             android:exported="false">
             <meta-data
@@ -25,11 +39,12 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Admin.listadoUsuarioAdmin"
@@ -149,7 +164,6 @@
         <activity
             android:name=".Cliente.Cliente_solicitudes"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -174,7 +188,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".SplashSreen"

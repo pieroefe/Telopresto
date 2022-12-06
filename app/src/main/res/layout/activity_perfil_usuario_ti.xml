@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Titulo editable"
+        android:text="Juan Perez"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.133"
@@ -31,129 +31,109 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tv_curso"
+        android:id="@+id/tv_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="68dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Marca:"
+        android:text="Nombre:"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_curso_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_nombre_edit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_curso_edit" />
+        app:layout_constraintTop_toTopOf="@+id/tv_nombre_edit"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/tv_estado"
+        android:id="@+id/tv_codigo_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:text="Caracteristicas:"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_estado_edit"
-        app:layout_constraintStart_toStartOf="@+id/tv_curso"
-        app:layout_constraintTop_toTopOf="@+id/tv_estado_edit"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_correo_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_correo_edit" />
 
     <TextView
-        android:id="@+id/tv_marca"
+        android:id="@+id/tv_correo_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:text="Incluye:"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_marca_edit"
-        app:layout_constraintStart_toStartOf="@+id/tv_estado"
-        app:layout_constraintTop_toTopOf="@+id/tv_marca_edit" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_edit"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toEndOf="@+id/tv_correo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_edit" />
 
     <TextView
-        android:id="@+id/tv_motivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:text="Stock:"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_motivo_edit"
-        app:layout_constraintStart_toStartOf="@+id/tv_marca"
-        app:layout_constraintTop_toTopOf="@+id/tv_motivo_edit" />
-
-    <TextView
-        android:id="@+id/tv_curso_edit"
+        android:id="@+id/tv_nombre_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginEnd="76dp"
         android:fontFamily="@font/inter"
         android:text="TextView"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_eliminar" />
 
     <TextView
-        android:id="@+id/tv_estado_edit"
+        android:id="@+id/tv_codigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/inter"
-        android:text="TextView"
+        android:fontFamily="@font/inter_bold"
+        android:text="Código:"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_curso_edit"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_estado"
-        app:layout_constraintTop_toBottomOf="@+id/tv_curso_edit" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_codigo_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_correo"
+        app:layout_constraintTop_toTopOf="@+id/tv_codigo_edit"
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <TextView
-        android:id="@+id/tv_marca_edit"
+        android:id="@+id/tv_correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/inter"
-        android:text="TextView"
+        android:fontFamily="@font/inter_bold"
+        android:text="Correo:"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_estado_edit"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_marca"
-        app:layout_constraintTop_toBottomOf="@+id/tv_estado_edit" />
-
-    <TextView
-        android:id="@+id/tv_motivo_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/inter"
-        android:text="TextView"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_marca_edit"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_motivo"
-        app:layout_constraintTop_toBottomOf="@+id/tv_marca_edit" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_correo_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre"
+        app:layout_constraintTop_toTopOf="@+id/tv_correo_edit"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btn_solicitar"
+        android:id="@+id/btn_editarfoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="112dp"
         android:backgroundTint="@color/negro"
         android:onClick="solicitarEquipo"
-        android:text="Solicitar"
+        android:text="Subir foto"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_eliminar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_motivo_edit" />
+        app:layout_constraintTop_toTopOf="@+id/btn_eliminar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btn_cancelar"
+        android:id="@+id/btn_eliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#D9D9D9"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#66AE5656"
         android:onClick="cancelar"
-        android:text="Cancelar"
+        android:text="Eliminar"
         android:textAllCaps="false"
         android:textColor="@color/negro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_solicitar" />
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toEndOf="@+id/btn_editarfoto"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"

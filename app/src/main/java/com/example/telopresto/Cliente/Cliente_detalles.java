@@ -38,7 +38,7 @@ public class Cliente_detalles extends AppCompatActivity {
         DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
 
         String id =  getIntent().getStringExtra("idEquipo");
-        tipoText = findViewById(R.id.tv_producto);
+        tipoText = findViewById(R.id.nombre_editable);
         marcaText = findViewById(R.id.tv_curso_edit);
         caracText = findViewById(R.id.tv_estado_edit);
         incluyeText = findViewById(R.id.tv_marca_edit);
