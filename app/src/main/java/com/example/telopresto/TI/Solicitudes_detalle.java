@@ -15,6 +15,7 @@ import com.example.telopresto.dto.Solicitud;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +30,8 @@ public class Solicitudes_detalle extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser user;
     TextView cursoText, estadoText, marcaText, motivoText, otrosText, programasText,tipoText, tiempoText;
     String id;
     @Override
@@ -37,7 +40,14 @@ public class Solicitudes_detalle extends AppCompatActivity {
         setContentView(R.layout.activity_solicitudes_detalle);
 
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child("Bpa6fjhX8xdEqWiprntGxtKPKJv1");
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
 
         id =  getIntent().getStringExtra("idEquipo3");
         System.out.println(id);
@@ -105,15 +115,14 @@ public class Solicitudes_detalle extends AppCompatActivity {
 
       */
 
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuario").child("Bpa6fjhX8xdEqWiprntGxtKPKJv1");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        DatabaseReference ref1  = databaseReference;
 
 
         ref1.child(id).updateChildren(solicitud).addOnSuccessListener(new OnSuccessListener() {
             @Override
             public void onSuccess(Object o) {
-                Toast.makeText(Solicitudes_detalle.this,"Editado correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Solicitudes_detalle.this,"Se ha aprobado la solicitud", Toast.LENGTH_SHORT).show();
 
                 Intent intent2 = new Intent(Solicitudes_detalle.this, listaSolicitudesUsuario.class);
                 intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
