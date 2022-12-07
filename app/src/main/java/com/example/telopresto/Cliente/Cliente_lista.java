@@ -38,8 +38,6 @@ import java.util.Locale;
 
 public class Cliente_lista extends AppCompatActivity {
 
-    /*
-
     RecyclerView recyclerView;
     listaEquiposAdapter listaEquiposAdapter;
     FirebaseDatabase firebaseDatabase;
@@ -185,7 +183,7 @@ public class Cliente_lista extends AppCompatActivity {
     }
 
 
-         */
+
 
 
 }

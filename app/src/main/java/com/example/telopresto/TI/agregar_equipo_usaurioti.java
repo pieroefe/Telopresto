@@ -103,6 +103,9 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
 
         refequipos.child(id).setValue(equipo).addOnSuccessListener(unused -> {
             Toast.makeText(agregar_equipo_usaurioti.this, "Guardado correctamente", Toast.LENGTH_SHORT).show();
+            Intent intent2 = new Intent(agregar_equipo_usaurioti.this, listadoEquiposUsuario.class);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent2);
         });
 
 
