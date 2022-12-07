@@ -259,18 +259,5 @@
         app:layout_constraintTop_toTopOf="@+id/buttoncancel"
         app:layout_constraintVertical_bias="1.0" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationCliente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/azul"
-        android:layout_marginTop="670dp"
-        app:itemIconTint="@color/amarillo"
-        app:labelVisibilityMode="auto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_cliente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
