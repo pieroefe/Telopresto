@@ -35,11 +35,11 @@ public class Adapter_ListaClientes extends RecyclerView.Adapter<Adapter_ListaCli
     private List<Usuario> clienteLista;
     private Context context;
 
-    public List<Usuario> getEventoList() {
+    public List<Usuario> getClienteLista() {
         return clienteLista;
     }
 
-    public void setClienteLista(List<Usuario> eventoList) {
+    public void setClienteLista(List<Usuario> clienteLista) {
         this.clienteLista = clienteLista;
     }
 
@@ -73,6 +73,7 @@ public class Adapter_ListaClientes extends RecyclerView.Adapter<Adapter_ListaCli
         Usuario u = clienteLista.get(position);
         ImageView imageView = holder.itemView.findViewById(R.id.iv_foto_TI);
         TextView textView = holder.itemView.findViewById(R.id.tv_nombre_usuarioti);
+        TextView textView1 = holder.itemView.findViewById(R.id.tv_codigo_usuarioti);
 
 
 

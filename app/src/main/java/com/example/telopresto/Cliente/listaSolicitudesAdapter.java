@@ -54,11 +54,11 @@ public class listaSolicitudesAdapter extends RecyclerView.Adapter<listaSolicitud
         holder.solicitud = e;
         TextView tipoText = holder.itemView.findViewById(R.id.textTipo2);
         TextView tiempoText = holder.itemView.findViewById(R.id.tiempoSolicitudNum);
-        TextView estado = holder.itemView.findViewById(R.id.estadoSolicitudModificable);
+        //TextView estado = holder.itemView.findViewById(R.id.estadoSolicitudModificable);
         tipoText.setText(e.getTipo());
         System.out.printf(e.getTipo());
         tiempoText.setText(e.getTiempoDeSolicitud());
-        estado.setText(e.getEstado());
+        //estado.setText(e.getEstado());
 
     }
     @Override

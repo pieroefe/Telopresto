@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Usuario;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +34,7 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
     StorageReference storageReference = storage.getReference();
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference();
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     private List<Usuario> usuariosListar = new ArrayList<Usuario>();
     private Context context;
@@ -47,6 +50,7 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_usuario_admin);
+        setBottomNavigationView();
 
         getItems();
 
@@ -145,5 +149,18 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
             }
         });
     }
+
+    public void accionCerrarSesion(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(listadoUsuarioAdmin.this, Login_principal.class));
+
+
+
+    }
+
+
+
 
 }

@@ -76,6 +76,7 @@ public class Adapter_ListaUsuariosTI extends RecyclerView.Adapter<Adapter_ListaU
         Usuario u = usuariosListar.get(position);
         ImageView imageView = holder.itemView.findViewById(R.id.iv_foto_TI);
         TextView textView = holder.itemView.findViewById(R.id.tv_nombre_usuarioti);
+
         Button editar = holder.itemView.findViewById(R.id.btn_edit_usuarioTi);
         Button eliminar = holder.itemView.findViewById(R.id.btn_delete_usuarioTi);
 
@@ -84,7 +85,7 @@ public class Adapter_ListaUsuariosTI extends RecyclerView.Adapter<Adapter_ListaU
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(),agregar_usuarioti_admin.class);
-                intent.putExtra("usuariosLista", u);
+                intent.putExtra("id_edit", u);
                 getContext().startActivity(intent);
             }
         });

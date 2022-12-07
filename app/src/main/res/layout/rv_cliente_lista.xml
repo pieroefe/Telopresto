@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/verde">
 
     <LinearLayout
-        android:layout_width="413dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="395dp"
+        android:layout_height="172dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="-2dp">
 
         <ImageView
             android:id="@+id/iv_foto_cliente"
@@ -28,29 +31,38 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_nombre_cliente"
+                android:id="@+id/tv_nombre_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Pepito"
+                android:textColor="@color/negro"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_codigo_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="20180524"
+                android:textColor="@color/negro" />
 
-            <LinearLayout
-                android:layout_width="218dp"
+            <TextView
+                android:id="@+id/tv_rol_usuario"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="rol"
+                android:textColor="@color/negro" />
 
-                <Button
-                    android:id="@+id/btn_edit_cliente"
-                    android:layout_width="49dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_baseline_mode_24" />
 
-                <Button
-                    android:id="@+id/btn_delete_cliente"
-                    android:layout_width="48dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_delete" />
-            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
