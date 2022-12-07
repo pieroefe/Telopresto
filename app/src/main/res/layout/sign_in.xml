@@ -37,14 +37,14 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="259dp"
         android:layout_height="60dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="32dp"
         android:hint="Correo PUCP"
         app:endIconMode="clear_text"
         app:hintTextColor="@color/azul"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/codigoInputLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/codigoInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/imageRegistro"
         app:startIconDrawable="@drawable/ic_mail">
 
@@ -61,20 +61,20 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirmpasswordInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="259dp"
         android:layout_height="60dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:hint="Confirmar contraseña"
         app:endIconMode="password_toggle"
         app:hintTextColor="@color/azul"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/passwordInputLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
         app:startIconDrawable="@drawable/ic_key">
 
@@ -94,16 +94,15 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="259dp"
         android:layout_height="60dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="32dp"
         android:hint="Contraseña"
         app:boxStrokeColor="@color/azul"
         app:endIconMode="password_toggle"
         app:hintTextColor="@color/azul"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/correoInputLayout"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="@+id/correoInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/correoInputLayout"
         app:startIconDrawable="@drawable/ic_key">
 
@@ -117,7 +116,6 @@
             android:textAlignment="center"
             android:textSize="13sp" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <Button
         android:id="@+id/registroBtn"
@@ -169,13 +167,14 @@
         android:layout_width="260dp"
         android:layout_height="80dp"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
         app:counterEnabled="true"
         app:counterMaxLength="8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:startIconDrawable="@drawable/ic_person"
-        tools:layout_editor_absoluteY="296dp">
+        app:layout_constraintTop_toBottomOf="@+id/imageRegistro"
+        app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/correoInputEditText1"
