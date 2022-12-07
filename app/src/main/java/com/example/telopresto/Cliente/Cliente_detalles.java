@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,6 +29,8 @@ public class Cliente_detalles extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     BottomNavigationView bottomNavigationView;
     TextView marcaText, caracText, incluyeText, stockText, tipoText;
+    ImageView imageView;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +39,19 @@ public class Cliente_detalles extends AppCompatActivity {
         setBottomNavigationView();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
 
-        String id =  getIntent().getStringExtra("idEquipo");
+
+        id =  getIntent().getStringExtra("idEquipo8");
+        System.out.println(id);
+        System.out.println("holaaaaaaaaaaaaaaaaaaa");
+        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos").child(id);
         tipoText = findViewById(R.id.nombre_editable);
         marcaText = findViewById(R.id.tv_curso_edit);
         caracText = findViewById(R.id.tv_estado_edit);
         incluyeText = findViewById(R.id.tv_marca_edit);
         stockText = findViewById(R.id.tv_motivo_edit);
+        imageView = findViewById(R.id.imageView);
+
 
         ref1.addValueEventListener(new ValueEventListener() {
             @Override
@@ -63,6 +72,13 @@ public class Cliente_detalles extends AppCompatActivity {
                               caracText.setText(equipo.getCaracteristicas());
                               incluyeText.setText(equipo.getIncluye());
                               stockText.setText(String.valueOf(equipo.getStock()));
+                                String url = equipo.getUrl();
+
+                              Glide.with(Cliente_detalles.this).load(url).into(imageView);
+
+
+
+
 
                         }
 

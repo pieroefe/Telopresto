@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
 
@@ -56,9 +58,12 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
         holder.equipo = e;
         TextView tipoText = holder.itemView.findViewById(R.id.textTipoSoli3);
         TextView stockText = holder.itemView.findViewById(R.id.textViewDisponibles);
+        ImageView imageView = holder.itemView.findViewById(R.id.imageViewEquipoAgregadoRecientemente);
         tipoText.setText(e.getTipo());
         stockText.setText(String.valueOf(e.getStock()));
+        String url = e.getUrl();
 
+        Glide.with(holder.itemView.getContext()).load(url).into(imageView);
         String id = e.getId();
 
 
@@ -67,7 +72,7 @@ public class listaEquiposAdapter extends RecyclerView.Adapter<listaEquiposAdapte
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), Cliente_detalles.class);
-                intent.putExtra("idEquipo", id);
+                intent.putExtra("idEquipo8", id);
                 holder.itemView.getContext().startActivity(intent);
                 System.out.println(list.get((position)));
             }

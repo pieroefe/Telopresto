@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,14 +17,14 @@
         android:theme="@style/Theme.Telopresto"
         tools:targetApi="31">
         <activity
-            android:name=".PerfilUsuarioTI"
+            android:name=".TI.PerfilUsuarioTI"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MotivoSolicitudRechaza"
+            android:name=".TI.MotivoSolicitudRechaza"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -35,7 +39,7 @@
         </activity>
         <activity
             android:name=".Admin.listadoAlumnoAdmin"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -63,7 +67,7 @@
         </activity>
         <activity
             android:name=".Login_principal"
-            android:exported="true">
+            android:exported="false">
 
 
 
@@ -126,10 +130,16 @@
         </activity>
         <activity
             android:name=".TI.listaSolicitudesUsuario"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity
             android:name=".TI.editar_equipo_usuarioti"
@@ -147,15 +157,10 @@
         </activity>
         <activity
             android:name=".TI.listadoEquiposUsuario"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
 
         </activity>
         <activity
@@ -193,12 +198,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
 
-
-
         </activity>
         <activity
             android:name=".SplashSreen"
-            android:exported="true"
+            android:exported="false"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <meta-data
                 android:name="android.app.lib_name"
