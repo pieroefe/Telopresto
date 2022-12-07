@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -63,6 +65,7 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
     }
 
     public void guardarEquipo(View view) {
+
 
         DatabaseReference ref = firebaseDatabase.getReference();
         DatabaseReference refequipos = ref.child("usuarioTI").child("listaEquipos");

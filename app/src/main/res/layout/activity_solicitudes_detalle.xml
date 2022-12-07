@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cliente.Cliente_detalles">
-
+    tools:context=".TI.Solicitudes_detalle">
 
     <TextView
-        android:id="@+id/nombre_editable"
+        android:id="@+id/solicitud_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Titulo editable"
+        android:text="Solicitud"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.133"
@@ -27,7 +26,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_editable"
+        app:layout_constraintTop_toBottomOf="@+id/solicitud_titulo"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -36,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Marca:"
+        android:text="Curso:"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_curso_edit"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_bold"
-        android:text="Caracteristicas:"
+        android:text="Estado:"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_estado_edit"
         app:layout_constraintStart_toStartOf="@+id/tv_curso"
@@ -59,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_bold"
-        android:text="Incluye:"
+        android:text="Marca:"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_marca_edit"
         app:layout_constraintStart_toStartOf="@+id/tv_estado"
@@ -70,11 +69,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_bold"
-        android:text="Stock:"
+        android:text="Motivo:"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_motivo_edit"
         app:layout_constraintStart_toStartOf="@+id/tv_marca"
         app:layout_constraintTop_toTopOf="@+id/tv_motivo_edit" />
+
+    <TextView
+        android:id="@+id/tv_otros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Otros:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_otros_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_motivo"
+        app:layout_constraintTop_toTopOf="@+id/tv_otros_edit" />
+
+    <TextView
+        android:id="@+id/tv_programas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Programas:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_programas_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_otros"
+        app:layout_constraintTop_toTopOf="@+id/tv_programas_edit" />
+
+    <TextView
+        android:id="@+id/tv_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Tipo:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tipo_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_programas"
+        app:layout_constraintTop_toTopOf="@+id/tv_tipo_edit"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tv_tiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Tiempo solicitud:"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tiempo_edit"
+        app:layout_constraintStart_toStartOf="@+id/tv_tipo"
+        app:layout_constraintTop_toTopOf="@+id/tv_tiempo_edit"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tv_curso_edit"
@@ -127,33 +172,92 @@
         app:layout_constraintStart_toEndOf="@+id/tv_motivo"
         app:layout_constraintTop_toBottomOf="@+id/tv_marca_edit" />
 
-    <Button
-        android:id="@+id/btn_solicitar"
+    <TextView
+        android:id="@+id/tv_otros_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:backgroundTint="@color/negro"
-        android:onClick="solicitarEquipo"
-        android:text="Solicitar"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_motivo_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_otros"
         app:layout_constraintTop_toBottomOf="@+id/tv_motivo_edit" />
 
-    <Button
-        android:id="@+id/btn_cancelar"
+    <TextView
+        android:id="@+id/tv_programas_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_otros_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_programas"
+        app:layout_constraintTop_toBottomOf="@+id/tv_otros_edit" />
+
+    <TextView
+        android:id="@+id/tv_tipo_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_programas_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_tipo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_programas_edit" />
+
+    <TextView
+        android:id="@+id/tv_tiempo_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_tipo_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_tiempo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tipo_edit" />
+
+    <Button
+        android:id="@+id/buttoncancel"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="128dp"
         android:backgroundTint="#D9D9D9"
-        android:onClick="cancelar"
-        android:text="Cancelar"
+        android:drawableBottom="@drawable/ic_cancel"
+        android:fontFamily="@font/inter_semibold"
+        android:onClick="rechazar"
+        android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/negro"
+        android:textColor="#2F2C2C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttoncheck"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tiempo_edit" />
+
+    <Button
+        android:id="@+id/buttoncheck"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="128dp"
+        android:backgroundTint="#D9D9D9"
+        android:drawableBottom="@drawable/ic_check"
+        android:fontFamily="@font/inter_semibold"
+        android:onClick="updatear2"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#2F2C2C"
+        app:layout_constraintBottom_toBottomOf="@+id/buttoncancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_solicitar" />
+        app:layout_constraintTop_toTopOf="@+id/buttoncancel"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"
@@ -168,6 +272,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_cliente" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

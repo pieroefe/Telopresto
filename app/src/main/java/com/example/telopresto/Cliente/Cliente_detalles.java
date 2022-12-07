@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.telopresto.R;
@@ -39,11 +38,11 @@ public class Cliente_detalles extends AppCompatActivity {
         DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
 
         String id =  getIntent().getStringExtra("idEquipo");
-        tipoText = findViewById(R.id.tv_producto);
-        marcaText = findViewById(R.id.tv_marca_edit);
-        caracText = findViewById(R.id.tv_caracteristicas_edit);
-        incluyeText = findViewById(R.id.tv_incluye_edit);
-        stockText = findViewById(R.id.tv_stock_edit);
+        tipoText = findViewById(R.id.nombre_editable);
+        marcaText = findViewById(R.id.tv_curso_edit);
+        caracText = findViewById(R.id.tv_estado_edit);
+        incluyeText = findViewById(R.id.tv_marca_edit);
+        stockText = findViewById(R.id.tv_motivo_edit);
 
         ref1.addValueEventListener(new ValueEventListener() {
             @Override

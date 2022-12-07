@@ -93,13 +93,12 @@ public class Adapter_ListaClientes extends RecyclerView.Adapter<Adapter_ListaCli
 
     @Override
     public int getItemCount() {
-        return clienteLista.size();
+//        return clienteLista.size();
+        return 0;
     }
 
 
-
-
-
-
-
 }
+
+
+

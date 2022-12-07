@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_reservas"
         android:layout_width="364dp"
         android:layout_height="578dp"
         android:layout_marginTop="76dp"
@@ -31,12 +32,14 @@
         android:id="@+id/bottomNavigationCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_cliente"
-        app:itemIconTint="@color/amarillo"
         android:background="@color/azul"
+        android:layout_marginTop="670dp"
+        app:itemIconTint="@color/amarillo"
         app:labelVisibilityMode="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_cliente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

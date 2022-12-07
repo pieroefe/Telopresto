@@ -13,8 +13,29 @@
         android:theme="@style/Theme.Telopresto"
         tools:targetApi="31">
         <activity
-            android:name=".Admin.listadoAlumnoAdmin"
+            android:name=".PerfilUsuarioTI"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MotivoSolicitudRechaza"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TI.Solicitudes_detalle"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin.listadoAlumnoAdmin"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -22,7 +43,6 @@
         <activity
             android:name=".Admin.listadoUsuarioAdmin"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -33,7 +53,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".WhatIs"
@@ -46,11 +65,9 @@
             android:name=".Login_principal"
             android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -73,21 +90,22 @@
         </activity>
         <activity
             android:name=".Admin.agregar_usuarioti_admin"
-            android:exported="true">
-
-
-
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".signIn"
-            android:exported="true"
+            android:exported="false"
             android:parentActivityName=".Login_principal">
-
-
-
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Cliente.agregarSolicitud"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -133,7 +151,10 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
 
         </activity>
@@ -164,7 +185,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".Cliente.Cliente_lista"
@@ -173,19 +193,17 @@
                 android:name="android.app.lib_name"
                 android:value="" />
 
+
+
         </activity>
         <activity
             android:name=".SplashSreen"
             android:exported="true"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="false">
@@ -193,7 +211,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
     </application>
 
 </manifest>

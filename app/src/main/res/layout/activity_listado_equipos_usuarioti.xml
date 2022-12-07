@@ -24,48 +24,49 @@
         android:layout_width="366dp"
         android:layout_height="477dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="262dp"
-        android:layout_height="48dp"
+        android:layout_width="261dp"
+        android:layout_height="36dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/borde_redondo_search"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerEquipoListado"
+        app:layout_constraintEnd_toStartOf="@+id/agregar_equipo_btn"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_usuarioti"
-        app:itemIconTint="@color/amarillo"
         android:background="@color/azul"
+        android:layout_marginTop="670dp"
+        app:itemIconTint="@color/amarillo"
         app:labelVisibilityMode="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_usuarioti" />
 
     <Button
         android:id="@+id/agregar_equipo_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/boton_redondo"
         android:drawableTop="@drawable/add_item2"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toEndOf="@+id/searchView"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

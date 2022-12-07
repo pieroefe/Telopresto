@@ -61,14 +61,6 @@ public class editar_equipo_usuarioti extends AppCompatActivity {
 
         Log.d("msg123", id);
 
-/*
-        tipoSpinner = findViewById(R.id.editarNombreDispositivo);
-        marcaSpinner = findViewById(R.id.editarMarcaDispositivo);
-        caracText = findViewById(R.id.editarCaracteristicaDispositivo);
-        incluyeText = findViewById(R.id.editarIncluyeDispositivo);
-        stocText = findViewById(R.id.editarStockDispositivo);
- */
-
         tipoSpinner = findViewById(R.id.editarNombreDispositivo);
         marcaSpinner = findViewById(R.id.editarMarcaDispositivo);
         caracText = findViewById(R.id.editarCaracteristicaDispositivo);
@@ -151,9 +143,6 @@ public class editar_equipo_usuarioti extends AppCompatActivity {
         usuario.put("marca", marcaSpinner.getSelectedItem().toString());
         usuario.put("stock", stocText.getText().toString());
         usuario.put("tipo",  tipoSpinner.getSelectedItem().toString());
-
-        firebaseAuth = FirebaseAuth.getInstance();
-        user = firebaseAuth.getCurrentUser();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
