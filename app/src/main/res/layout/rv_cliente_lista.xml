@@ -32,34 +32,14 @@
 
             <TextView
                 android:id="@+id/tv_nombre_usuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="257dp"
+                android:layout_height="121dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/inter_bold"
                 android:text="Pepito"
                 android:textColor="@color/negro"
                 android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tv_codigo_usuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="20180524"
-                android:textColor="@color/negro" />
-
-            <TextView
-                android:id="@+id/tv_rol_usuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="rol"
-                android:textColor="@color/negro" />
 
 
         </LinearLayout>

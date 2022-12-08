@@ -18,6 +18,8 @@ import com.example.telopresto.R;
 import com.example.telopresto.dto.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -31,6 +33,9 @@ public class Adapter_ListaUsuariosTI extends RecyclerView.Adapter<Adapter_ListaU
     StorageReference storageReference = storage.getReference();
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference();
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+
 
     private List<Usuario> usuariosListar;
     private Context context;
@@ -87,6 +92,8 @@ public class Adapter_ListaUsuariosTI extends RecyclerView.Adapter<Adapter_ListaU
                 Intent intent = new Intent(getContext(),agregar_usuarioti_admin.class);
                 intent.putExtra("id_edit", u);
                 getContext().startActivity(intent);
+
+
             }
         });
 
@@ -96,14 +103,24 @@ public class Adapter_ListaUsuariosTI extends RecyclerView.Adapter<Adapter_ListaU
             @Override
             public void onClick(View view) {
                 String eliminarkey = u.getKey();
+
                 databaseReference.child("usuario").child(eliminarkey).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+
+
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
+
                             storageReference.child("img/"+u.getFilename()).delete();
-                            Toast.makeText(getContext(),"Borrado con exito",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getContext(),listadoUsuarioAdmin.class);
+
+                            Toast.makeText(getContext(),"Borrado con exito para siempre",Toast.LENGTH_SHORT).show();
+                            getContext().startActivity(intent);
+
+
                         }else {
                             Toast.makeText(getContext(), "Borrado fallido",Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
@@ -111,8 +128,11 @@ public class Adapter_ListaUsuariosTI extends RecyclerView.Adapter<Adapter_ListaU
             }
         });
 
+        System.out.println(u.getCodigo());
 
-        textView.setText(u.getDetalleAImprimir());
+        System.out.println("imagen" + u.getFilename());
+
+        textView.setText(u.getDetalleAImprimir_usuarioTI());
         StorageReference imageRef = storageReference.child("img/"+u.getFilename());
         Glide.with(getContext()).load(imageRef).into(imageView);
 

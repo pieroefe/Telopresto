@@ -36,6 +36,8 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
     DatabaseReference databaseReference = firebaseDatabase.getReference();
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
+    Adapter_ListaUsuariosTI adapter_listaUsuariosTI;
+
     private List<Usuario> usuariosListar = new ArrayList<Usuario>();
     private Context context;
 
@@ -77,10 +79,15 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
                 Adapter_ListaUsuariosTI listaTIAdapter = new Adapter_ListaUsuariosTI();
                 listaTIAdapter.setusuarioTIList(usuariosListar);
                 listaTIAdapter.setContext(listadoUsuarioAdmin.this);
-                RecyclerView recyclerView = findViewById(R.id.rv_listaCliente);
 
+                RecyclerView recyclerView = findViewById(R.id.rv_listaCliente);
                 recyclerView.setAdapter(listaTIAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(listadoUsuarioAdmin.this));
+
+                listaTIAdapter.notifyItemRangeChanged(0, usuariosListar.size());
+
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -159,6 +166,10 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
 
 
     }
+
+
+
+
 
 
 

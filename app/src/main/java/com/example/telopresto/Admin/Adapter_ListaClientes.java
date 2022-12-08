@@ -71,14 +71,16 @@ public class Adapter_ListaClientes extends RecyclerView.Adapter<Adapter_ListaCli
 
 
         Usuario u = clienteLista.get(position);
-        ImageView imageView = holder.itemView.findViewById(R.id.iv_foto_TI);
-        TextView textView = holder.itemView.findViewById(R.id.tv_nombre_usuarioti);
-        TextView textView1 = holder.itemView.findViewById(R.id.tv_codigo_usuarioti);
+        ImageView imageView = holder.itemView.findViewById(R.id.iv_foto_cliente);
+        TextView textView = holder.itemView.findViewById(R.id.tv_nombre_usuario);
 
 
 
 
-        textView.setText(u.getDetalleAImprimir());
+
+        textView.setText(u.getDetalleAImprimir_usuario());
+
+
         StorageReference imageRef = storageReference.child("img/"+u.getFilename());
         Glide.with(getContext()).load(imageRef).into(imageView);
 
@@ -93,8 +95,8 @@ public class Adapter_ListaClientes extends RecyclerView.Adapter<Adapter_ListaCli
 
     @Override
     public int getItemCount() {
-//        return clienteLista.size();
-        return 0;
+        return clienteLista.size();
+
     }
 
 

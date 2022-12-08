@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.telopresto.R;
@@ -34,6 +35,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -92,6 +94,7 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
 
         EditText correo = findViewById(R.id.et_nombre_add);
         EditText codigo = findViewById(R.id.et_codigo_add);
+        TextView titulo = findViewById(R.id.agregar_ti_title);
 
         EditText password = findViewById(R.id.et_contra_add);
         EditText verifyPassword = findViewById(R.id.et_confirm_add);
@@ -103,6 +106,9 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
         if (editar) {
             correo.setText(usuarioEditar.getCorreo());
             codigo.setText(usuarioEditar.getCodigo());
+            titulo.setText("Editar Usuario TI");
+            btn_agregarTI.setText("Actualizar");
+
 
         }
 
@@ -117,9 +123,9 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
         btn_agregarTI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String filename = "";
+                String filename = "" ;
                 if(editar){
-                    btn_agregarTI.setText("Actualizar");
+
 
 
                     if(imageUri!=null){
@@ -131,8 +137,11 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
                     }
                     databaseReference.child(usuarioEditar.getKey()).child("correo").setValue(correo.getText().toString());
                     databaseReference.child(usuarioEditar.getKey()).child("codigo").setValue(codigo.getText().toString());
+                    databaseReference.child(usuarioEditar.getKey()).child("filename").setValue(imageUri!=null?filename:usuarioEditar.getFilename());
 
                     Toast.makeText(agregar_usuarioti_admin.this, "Actualizado correctamente", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(agregar_usuarioti_admin.this, listadoUsuarioAdmin.class);
+                    startActivity(intent);
 
                 }else{
                     //Pasamos a crear
@@ -190,9 +199,14 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
 
                         }
 
+
+
+
+
                         if (correoValido && passwordValido && verifyPasswordValido && codigoValido) {
                             Log.d("task", "Registro valido");
 
+                            String finalFilename = filename;
                             firebaseAuth.createUserWithEmailAndPassword(correo.getText().toString().trim(), password.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -201,6 +215,8 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
                                         String key = databaseReference.push().getKey();
                                         databaseReference.child(key).child("correo").setValue(correo.getText().toString().trim());
                                         databaseReference.child(key).child("codigo").setValue(codigo.getText().toString().trim());
+
+                                        databaseReference.child(key).child("filename").setValue(finalFilename);
 
                                         databaseReference.child(key).child("rol").setValue("usuarioTI");
 
@@ -245,6 +261,9 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
 
 
 
+                    }else{
+                        Toast.makeText(agregar_usuarioti_admin.this, "Debe seleccionar una imagen", Toast.LENGTH_SHORT).show();
+
                     }
 
 
@@ -263,47 +282,6 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        btn_foto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                subirImagen();
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

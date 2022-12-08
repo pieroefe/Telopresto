@@ -66,10 +66,23 @@ public class Usuario implements  Serializable{
         this.filename = filename;
     }
 
-    public String getDetalleAImprimir(){
-        return "Correo: "+this.correo+"\n";
+    public String getDetalleAImprimir_usuario(){
+        return "Correo: "+this.correo+"\n"+
+                "Codigo: "+this.codigo+"\n"+
+                "Rol: "+this.rol+"\n";
+
 
     }
+
+    public String getDetalleAImprimir_usuarioTI(){
+        return "Correo: "+this.correo+"\n"+
+                "Codigo: "+this.codigo+"\n";
+
+
+
+    }
+
+
 
 
 
