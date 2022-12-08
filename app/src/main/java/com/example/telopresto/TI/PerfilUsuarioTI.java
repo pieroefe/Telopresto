@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.telopresto.R;
+import com.example.telopresto.dto.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -54,30 +55,41 @@ public class PerfilUsuarioTI extends AppCompatActivity {
         tv_nombre_edit = findViewById(R.id.tv_nombre_edit);
         tv_correo_edit = findViewById(R.id.tv_correo_edit);
         tv_codigo_edit = findViewById(R.id.tv_codigo_edit);
+        System.out.println("Steph");
 
         btn_editarfoto = findViewById(R.id.btn_editarfoto);
         btn_eliminar = findViewById(R.id.btn_eliminar);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
+        System.out.println(user.getK());
         ref = FirebaseDatabase.getInstance().getReference("usuario");
 
         // OBTENER DATOS DEL USUARIO
         ref.child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 // SI EL USUARIO EXISTE
-                if(snapshot.exists()){
+                for(DataSnapshot children: snapshot.getChildren()){
+
+                    Usuario usuario = children.getValue(Usuario.class);
+
+
+                }
+                if(snapshot.getKey().equals()){
                     //OBTENEMOS LOS DATOS DE FIREBASE
-                    String nombres = ""+snapshot.child("Nombre").getValue();
-                    String correo = ""+snapshot.child("Correo").getValue();
-                    String codigo = ""+snapshot.child("Codigo").getValue();
-                    String image = ""+snapshot.child("Imagen").getValue();
+//                    String nombres = ""+snapshot.child("Nombre").getValue();
+                    String codigo = ""+snapshot.child("codigo").getValue();
+                    String correo = ""+snapshot.child("correo").getValue();
+                    String image = ""+snapshot.child("imagen").getValue();
 
                     //SETEAMOS LOS DATOS EN LOS TEXTVIEW E IMAGEVIEW
-                    tv_nombre_edit.setText(nombres);
+//                    tv_nombre_edit.setText(nombres);
                     tv_correo_edit.setText(correo);
                     tv_codigo_edit.setText(codigo);
+                    System.out.println(codigo);
+                    System.out.println(correo);
 
                     //OBTENEMOS IMAGEN
 
