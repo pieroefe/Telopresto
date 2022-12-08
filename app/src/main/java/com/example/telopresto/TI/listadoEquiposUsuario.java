@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
 import com.firebase.ui.auth.AuthUI;
@@ -50,6 +52,7 @@ public class listadoEquiposUsuario extends AppCompatActivity {
     SearchView searchView;
     DatabaseReference ref1;
     FirebaseAuth mAuth;
+    String id;
 
     BottomNavigationView bottomNavigationView;
 
@@ -59,6 +62,8 @@ public class listadoEquiposUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_equipos_usuarioti);
         setBottomNavigationView();
+
+        id =  getIntent().getStringExtra("key");
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -184,7 +189,9 @@ public class listadoEquiposUsuario extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.perfilUsuarioTI:
-                        startActivity(new Intent(listadoEquiposUsuario.this,PerfilUsuarioTI.class));
+                        Intent intent1 = new Intent(listadoEquiposUsuario.this, PerfilUsuarioTI.class);
+                        intent1.putExtra("key2",id);
+                        startActivity(intent1);
                 }
                 return false;
             }

@@ -35,6 +35,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class PerfilUsuarioTI extends AppCompatActivity {
 
@@ -48,8 +49,9 @@ public class PerfilUsuarioTI extends AppCompatActivity {
     DatabaseReference ref;
 
     ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+    ArrayList<String> listallaves = new ArrayList<>();
     StorageReference storageReference;
-    String key;
+    String id;
 
     private static final String TAG = "PerfilUsuarioTI";
 
@@ -67,7 +69,6 @@ public class PerfilUsuarioTI extends AppCompatActivity {
         tv_nombre_edit = findViewById(R.id.tv_nombre_edit);
         tv_correo_edit = findViewById(R.id.tv_correo_edit);
         tv_codigo_edit = findViewById(R.id.tv_codigo_edit);
-        System.out.println("Steph");
 
         btn_editarfoto = findViewById(R.id.btn_editarfoto);
 
@@ -75,6 +76,7 @@ public class PerfilUsuarioTI extends AppCompatActivity {
         user = firebaseAuth.getCurrentUser();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
+        id =  getIntent().getStringExtra("key2");
 
 
 /*
@@ -98,11 +100,13 @@ public class PerfilUsuarioTI extends AppCompatActivity {
                 for(DataSnapshot usuarios: snapshot.getChildren()){
 
                     Usuario usuario = usuarios.getValue(Usuario.class);
-                    key = usuario.getKey();
                     listaUsuarios.add(usuario);
+                    System.out.println(id);
 
                     for(Usuario usuario1 : listaUsuarios){
-                        if(usuario1.getKey()==key){
+                        if(Objects.equals(usuario1.getKey(), id)){
+                            System.out.println("entra quiiiiiii");
+                            System.out.println(id);
                             String codigo = usuario1.getCodigo();
                             String correo = usuario1.getCorreo();
                             String url = usuario1.getUrl();
@@ -111,7 +115,6 @@ public class PerfilUsuarioTI extends AppCompatActivity {
                             Glide.with(PerfilUsuarioTI.this).load(url).into(imageView);
                         }
                     }
-
 
                 }
           /*      if(snapshot.getKey().equals()){
@@ -178,7 +181,7 @@ public class PerfilUsuarioTI extends AppCompatActivity {
                             @Override
                             public void onSuccess(Uri uri) {
                                 DatabaseReference ref = firebaseDatabase.getReference();
-                                DatabaseReference perfil = ref.child("usuario").child(key);
+                                DatabaseReference perfil = ref.child("usuario").child(id);
 
                                 String download_uri=uri.toString();
                                 HashMap usuario = new HashMap();
