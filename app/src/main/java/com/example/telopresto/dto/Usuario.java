@@ -10,10 +10,18 @@ public class Usuario implements  Serializable{
     private String codigo;
     private String rol;
     private String key;
+    private String url;
 
     private String filename;
 
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public Usuario() {
     }

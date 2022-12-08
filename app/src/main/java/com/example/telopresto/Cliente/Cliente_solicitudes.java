@@ -65,7 +65,7 @@ public class Cliente_solicitudes extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes");
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {

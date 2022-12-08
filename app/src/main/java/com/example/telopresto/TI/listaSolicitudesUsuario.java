@@ -45,11 +45,8 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
 
         solicitudes = new ArrayList<>();
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        user = firebaseAuth.getCurrentUser();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes");
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
-        System.out.println(user.getUid());
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {

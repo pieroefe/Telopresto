@@ -5,11 +5,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Solicitud;
 
@@ -52,7 +54,6 @@ public class listaSolicitudesAdapter extends RecyclerView.Adapter<listaSolicitud
         TextView tiempoText = holder.itemView.findViewById(R.id.tiempoSolicitudNum3);
         TextView estado = holder.itemView.findViewById(R.id.estadoSolicitud3);
         tipoText.setText(e.getTipo());
-        System.out.printf(e.getTipo());
         tiempoText.setText(e.getTiempoDeSolicitud());
         estado.setText(e.getEstado());
 

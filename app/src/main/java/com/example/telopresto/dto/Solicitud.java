@@ -12,6 +12,7 @@ public class Solicitud {
     String otros;
     String estado;
 
+
     public String getId() {
         return id;
     }
@@ -83,4 +84,5 @@ public class Solicitud {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
 }

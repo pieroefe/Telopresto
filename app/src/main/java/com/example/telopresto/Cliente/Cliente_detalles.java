@@ -30,7 +30,7 @@ public class Cliente_detalles extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView marcaText, caracText, incluyeText, stockText, tipoText;
     ImageView imageView;
-    String id;
+    String id, url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +44,13 @@ public class Cliente_detalles extends AppCompatActivity {
         id =  getIntent().getStringExtra("idEquipo8");
         System.out.println(id);
         System.out.println("holaaaaaaaaaaaaaaaaaaa");
-        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos").child(id);
+        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
         tipoText = findViewById(R.id.nombre_editable);
         marcaText = findViewById(R.id.tv_curso_edit);
         caracText = findViewById(R.id.tv_estado_edit);
         incluyeText = findViewById(R.id.tv_marca_edit);
         stockText = findViewById(R.id.tv_motivo_edit);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.imageView45);
 
 
         ref1.addValueEventListener(new ValueEventListener() {
@@ -72,13 +72,9 @@ public class Cliente_detalles extends AppCompatActivity {
                               caracText.setText(equipo.getCaracteristicas());
                               incluyeText.setText(equipo.getIncluye());
                               stockText.setText(String.valueOf(equipo.getStock()));
-                                String url = equipo.getUrl();
+                              url = equipo.getUrl();
 
                               Glide.with(Cliente_detalles.this).load(url).into(imageView);
-
-
-
-
 
                         }
 
