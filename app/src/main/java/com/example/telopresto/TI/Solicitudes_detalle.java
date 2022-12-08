@@ -39,15 +39,7 @@ public class Solicitudes_detalle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitudes_detalle);
 
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
-
-
-        firebaseAuth = FirebaseAuth.getInstance();
-        user = firebaseAuth.getCurrentUser();
-
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes");
 
         id =  getIntent().getStringExtra("idEquipo3");
         System.out.println(id);
