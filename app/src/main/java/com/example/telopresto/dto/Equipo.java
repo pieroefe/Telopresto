@@ -10,6 +10,7 @@ public class Equipo {
     String caracteristicas;
     String incluye;
     String stock;
+    String url;
 
     public String getId() {
         return id;
@@ -63,4 +64,13 @@ public class Equipo {
     public String toString() {
         return tipo;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
 }

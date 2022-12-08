@@ -18,7 +18,7 @@
         tools:layout_editor_absoluteY="-2dp">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageViewEquipoAgregadoRecientemente"
             android:layout_width="154dp"
             android:layout_height="95dp"
             android:layout_marginTop="15dp"

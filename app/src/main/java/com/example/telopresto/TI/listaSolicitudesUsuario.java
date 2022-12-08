@@ -42,7 +42,6 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_solicitudes_usuarioti);
         setBottomNavigationView();
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
 
         solicitudes = new ArrayList<>();
 
@@ -50,6 +49,7 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
         user = firebaseAuth.getCurrentUser();
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        System.out.println(user.getUid());
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {

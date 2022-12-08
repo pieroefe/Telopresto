@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
 import com.google.firebase.database.DatabaseReference;
@@ -70,6 +71,9 @@ public class listadoEquiposUsuarioAdapter extends RecyclerView.Adapter<listadoEq
         tipoText.setText(e.getTipo());
         stockText.setText(e.getStock());
 
+        String url = e.getUrl();
+
+        Glide.with(holder.itemView.getContext()).load(url).into(img);
         String id = e.getId();
 
         Button btn_editar = holder.itemView.findViewById(R.id.edita_btn_equipo);

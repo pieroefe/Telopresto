@@ -183,6 +183,8 @@ public class listadoEquiposUsuario extends AppCompatActivity {
                         startActivity(new Intent(listadoEquiposUsuario.this, listaSolicitudesUsuario.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.perfilUsuarioTI:
+                        startActivity(new Intent(listadoEquiposUsuario.this,PerfilUsuarioTI.class));
                 }
                 return false;
             }

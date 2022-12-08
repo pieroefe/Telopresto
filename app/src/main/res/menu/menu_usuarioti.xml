@@ -13,4 +13,10 @@
         android:title="Solicitudes"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/perfilUsuarioTI"
+        android:icon="@drawable/ic_person_outline"
+        android:title="Perfil"
+        app:showAsAction="ifRoom" />
+
 </menu>
