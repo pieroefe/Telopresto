@@ -90,6 +90,9 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
                         return true;
                     case R.id.solicitudes:
                         return true;
+
+                    case R.id.perfilUsuarioTI:
+                        startActivity(new Intent(listaSolicitudesUsuario.this,PerfilUsuarioTI.class));
                 }
                 return false;
             }
