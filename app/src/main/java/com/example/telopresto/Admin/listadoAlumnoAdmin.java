@@ -67,7 +67,7 @@ public class listadoAlumnoAdmin extends AppCompatActivity {
 
 
     public void getUsuarios(){
-        firebaseDatabase.getReference().child("usuarios").addValueEventListener(new ValueEventListener() {
+        firebaseDatabase.getReference().child("usuario").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 System.out.println("cant:"+ snapshot.getChildrenCount());
