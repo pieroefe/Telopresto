@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.telopresto.Cliente.Cliente_solicitudes_detalles;
 import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
@@ -53,6 +55,7 @@ public class listadoEquiposUsuario extends AppCompatActivity {
     DatabaseReference ref1;
     FirebaseAuth mAuth;
     String id;
+    FirebaseAuth firebaseAuth;
 
     BottomNavigationView bottomNavigationView;
 
@@ -198,5 +201,21 @@ public class listadoEquiposUsuario extends AppCompatActivity {
         });
     }
 
+    public boolean onCreateOptionsMenu(Menu menu){
 
+        getMenuInflater().inflate(R.menu.menu_lista_usuarios,menu);
+        return true;
+
+    }
+
+
+    public void accionCerrarSesionUsuarios(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(listadoEquiposUsuario.this, Login_principal.class));
+
+
+
+    }
 }

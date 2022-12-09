@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Juan Perez"
+        android:text="Perfil"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.133"
@@ -33,19 +33,6 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tv_nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="Nombre:"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_nombre_edit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_nombre_edit"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
         android:id="@+id/tv_codigo_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,24 +50,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/inter"
-        android:text="TextView"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_edit"
-        app:layout_constraintHorizontal_bias="0.985"
-        app:layout_constraintStart_toEndOf="@+id/tv_correo"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_edit" />
-
-    <TextView
-        android:id="@+id/tv_nombre_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="76dp"
         android:fontFamily="@font/inter"
         android:text="TextView"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_correo"
         app:layout_constraintTop_toBottomOf="@+id/btn_editarfoto" />
 
     <TextView
@@ -100,13 +76,14 @@
         android:id="@+id/tv_correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
         android:fontFamily="@font/inter_bold"
         android:text="Correo:"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_correo_edit"
-        app:layout_constraintStart_toStartOf="@+id/tv_nombre"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_correo_edit"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_editarfoto"

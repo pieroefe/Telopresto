@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.telopresto.Cliente.Cliente_solicitudes;
 import com.example.telopresto.Cliente.listaSolicitudesAdapter;
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Solicitud;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -94,5 +96,23 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        getMenuInflater().inflate(R.menu.menu_lista_usuarios,menu);
+        return true;
+
+    }
+
+
+    public void accionCerrarSesionUsuarios(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(listaSolicitudesUsuario.this, Login_principal.class));
+
+
+
     }
 }

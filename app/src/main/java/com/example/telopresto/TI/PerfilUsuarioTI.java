@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.telopresto.Cliente.Cliente_detalles;
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -66,7 +68,6 @@ public class PerfilUsuarioTI extends AppCompatActivity {
         setBottomNavigationView();
 
         imageView = findViewById(R.id.imageView45);
-        tv_nombre_edit = findViewById(R.id.tv_nombre_edit);
         tv_correo_edit = findViewById(R.id.tv_correo_edit);
         tv_codigo_edit = findViewById(R.id.tv_codigo_edit);
 
@@ -298,5 +299,21 @@ public class PerfilUsuarioTI extends AppCompatActivity {
         });
     }
 
+    public boolean onCreateOptionsMenu(Menu menu){
 
+        getMenuInflater().inflate(R.menu.menu_lista_usuarios,menu);
+        return true;
+
+    }
+
+
+    public void accionCerrarSesionUsuarios(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(PerfilUsuarioTI.this, Login_principal.class));
+
+
+
+    }
 }
