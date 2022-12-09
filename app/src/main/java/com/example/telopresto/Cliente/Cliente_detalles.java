@@ -5,16 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,7 +33,9 @@ public class Cliente_detalles extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView marcaText, caracText, incluyeText, stockText, tipoText;
     ImageView imageView;
-    String id;
+    String id, url;
+    FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +49,13 @@ public class Cliente_detalles extends AppCompatActivity {
         id =  getIntent().getStringExtra("idEquipo8");
         System.out.println(id);
         System.out.println("holaaaaaaaaaaaaaaaaaaa");
-        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos").child(id);
+        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
         tipoText = findViewById(R.id.nombre_editable);
         marcaText = findViewById(R.id.tv_curso_edit);
         caracText = findViewById(R.id.tv_estado_edit);
         incluyeText = findViewById(R.id.tv_marca_edit);
         stockText = findViewById(R.id.tv_motivo_edit);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.imageView45);
 
 
         ref1.addValueEventListener(new ValueEventListener() {
@@ -72,13 +77,9 @@ public class Cliente_detalles extends AppCompatActivity {
                               caracText.setText(equipo.getCaracteristicas());
                               incluyeText.setText(equipo.getIncluye());
                               stockText.setText(String.valueOf(equipo.getStock()));
-                                String url = equipo.getUrl();
+                              url = equipo.getUrl();
 
                               Glide.with(Cliente_detalles.this).load(url).into(imageView);
-
-
-
-
 
                         }
 
@@ -138,7 +139,23 @@ public class Cliente_detalles extends AppCompatActivity {
         });
     }
 
+    public boolean onCreateOptionsMenu(Menu menu){
 
+        getMenuInflater().inflate(R.menu.menu_lista_usuarios,menu);
+        return true;
+
+    }
+
+
+    public void accionCerrarSesionUsuarios(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(Cliente_detalles.this, Login_principal.class));
+
+
+
+    }
 
 
 

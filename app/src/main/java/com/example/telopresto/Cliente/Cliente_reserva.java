@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Solicitud;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -51,7 +52,7 @@ public class Cliente_reserva extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes");
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -108,6 +109,24 @@ public class Cliente_reserva extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        getMenuInflater().inflate(R.menu.menu_lista_usuarios,menu);
+        return true;
+
+    }
+
+
+    public void accionCerrarSesionUsuarios(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(Cliente_reserva.this, Login_principal.class));
+
+
+
     }
 
 

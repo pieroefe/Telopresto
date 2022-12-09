@@ -12,18 +12,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="125dp"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="-2dp">
-
-        <ImageView
-            android:id="@+id/imageViewEquipoAgregadoRecientemente"
-            android:layout_width="154dp"
-            android:layout_height="95dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
             android:layout_width="239dp"
@@ -39,7 +31,7 @@
                 android:fontFamily="@font/inter_bold"
                 android:text="Laptop Gamer"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="239dp"
@@ -118,8 +110,6 @@
                     android:textColor="@color/white" />
 
             </LinearLayout>
-
-
 
 
         </LinearLayout>

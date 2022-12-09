@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.dto.Equipo;
 import com.example.telopresto.dto.Solicitud;
@@ -39,15 +42,7 @@ public class Solicitudes_detalle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitudes_detalle);
 
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
-
-
-        firebaseAuth = FirebaseAuth.getInstance();
-        user = firebaseAuth.getCurrentUser();
-
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes");
 
         id =  getIntent().getStringExtra("idEquipo3");
         System.out.println(id);
@@ -134,8 +129,26 @@ public class Solicitudes_detalle extends AppCompatActivity {
 
     }
     public void rechazar(View view){
-        Intent intent = new Intent(Solicitudes_detalle.this, solicitud_rechazada_usuaurioti.class);
+        Intent intent = new Intent(Solicitudes_detalle.this, MotivoSolicitudRechaza.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        getMenuInflater().inflate(R.menu.menu_lista_usuarios,menu);
+        return true;
+
+    }
+
+
+    public void accionCerrarSesionUsuarios(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(Solicitudes_detalle.this, Login_principal.class));
+
+
+
     }
 }

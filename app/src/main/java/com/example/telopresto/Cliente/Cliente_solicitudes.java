@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.TI.agregar_equipo_usaurioti;
 import com.example.telopresto.TI.listadoEquiposUsuario;
@@ -65,7 +66,7 @@ public class Cliente_solicitudes extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes");
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -123,5 +124,23 @@ public class Cliente_solicitudes extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        getMenuInflater().inflate(R.menu.menu_lista_usuarios,menu);
+        return true;
+
+    }
+
+
+    public void accionCerrarSesionUsuarios(MenuItem item){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(Cliente_solicitudes.this, Login_principal.class));
+
+
+
     }
 }
