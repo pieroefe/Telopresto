@@ -45,7 +45,7 @@ public class solicitud_aprobada_usuarioti extends AppCompatActivity implements O
 
         btnContinuar.setOnClickListener(view -> {
 
-            Intent intent = new Intent(solicitud_aprobada_usuarioti.this, Cliente_solicitudes.class);
+            Intent intent = new Intent(solicitud_aprobada_usuarioti.this, listaSolicitudesUsuario.class);
             startActivity(intent);
         });
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);

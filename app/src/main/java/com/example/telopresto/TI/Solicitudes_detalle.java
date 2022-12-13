@@ -109,17 +109,16 @@ public class Solicitudes_detalle extends AppCompatActivity {
         solicitud.put("tiempoDeSolicitud", tiempoText.getText().toString());
 
       */
-        System.out.println(user.getUid());
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes").child(id);
         DatabaseReference ref1  = databaseReference;
 
 
-        ref1.child(id).updateChildren(solicitud).addOnSuccessListener(new OnSuccessListener() {
+        ref1.updateChildren(solicitud).addOnSuccessListener(new OnSuccessListener() {
             @Override
             public void onSuccess(Object o) {
                 Toast.makeText(Solicitudes_detalle.this,"Se ha aprobado la solicitud", Toast.LENGTH_SHORT).show();
 
-                Intent intent2 = new Intent(Solicitudes_detalle.this, listaSolicitudesUsuario.class);
+                Intent intent2 = new Intent(Solicitudes_detalle.this, solicitud_aprobada_usuarioti.class);
                 intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
             }
@@ -129,10 +128,27 @@ public class Solicitudes_detalle extends AppCompatActivity {
 
     }
     public void rechazar(View view){
-        Intent intent = new Intent(Solicitudes_detalle.this, Solicitudes_detalle.class);
-        intent.putExtra("idEquipo3", id);
-        startActivity(intent);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        HashMap solicitud = new HashMap();
+        solicitud.put("estado", "Rechazado");
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes").child(id);
+        DatabaseReference ref1  = databaseReference;
+
+
+        ref1.updateChildren(solicitud).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(Solicitudes_detalle.this,"Se ha rechazado la solicitud", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Solicitudes_detalle.this, MotivoSolicitudRechaza.class);
+                intent.putExtra("idEquipo3", id);
+                startActivity(intent);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            }
+        });
+
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu){

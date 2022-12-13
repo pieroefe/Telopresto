@@ -42,7 +42,6 @@ public class MotivoSolicitudRechaza extends AppCompatActivity {
 
         HashMap solicitud = new HashMap();
         solicitud.put("motivo", motivoInput.getEditText().getText().toString());
-        solicitud.put("estado", "Rechazado");
      /*   solicitud.put("id", id);
         solicitud.put("curso",cursoText.getText().toString());
         solicitud.put("marca",marcaText.getText().toString());
@@ -54,15 +53,13 @@ public class MotivoSolicitudRechaza extends AppCompatActivity {
 
       */
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes").child(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes").child(id);
         DatabaseReference ref1  = databaseReference;
 
 
-        ref1.child(id).updateChildren(solicitud).addOnSuccessListener(new OnSuccessListener() {
+        ref1.updateChildren(solicitud).addOnSuccessListener(new OnSuccessListener() {
             @Override
             public void onSuccess(Object o) {
-                Toast.makeText(MotivoSolicitudRechaza.this,"Se ha rechazado la solicitud", Toast.LENGTH_SHORT).show();
-
                 Intent intent2 = new Intent(MotivoSolicitudRechaza.this, listaSolicitudesUsuario.class);
                 intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
@@ -71,12 +68,6 @@ public class MotivoSolicitudRechaza extends AppCompatActivity {
 
 
 
-    }
-
-    public void rechazar(View view){
-        Intent intent = new Intent(MotivoSolicitudRechaza.this, listaSolicitudesUsuario.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
