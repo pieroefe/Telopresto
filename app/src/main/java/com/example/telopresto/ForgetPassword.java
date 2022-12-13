@@ -40,6 +40,7 @@ public class ForgetPassword extends AppCompatActivity {
         correo = findViewById(R.id.correoInputLayout);
         btnCambiarContra = findViewById(R.id.btn_restablecer);
 
+
         mDialog = new ProgressDialog(this);
 
         btnCambiarContra.setOnClickListener(new View.OnClickListener() {
