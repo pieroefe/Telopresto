@@ -131,10 +131,16 @@
         </activity>
         <activity
             android:name=".TI.solicitud_aprobada_usuarioti"
-            android:exported="false">
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyBWGqic7XbnCf6lEYTyTJmi_RUvmItxn9E" />/>
         </activity>
         <activity
             android:name=".TI.listaSolicitudesUsuario"
@@ -213,10 +219,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".MainActivity"

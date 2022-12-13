@@ -31,14 +31,12 @@ public class solicitud_aprobada_usuarioti extends AppCompatActivity implements O
 
     GoogleMap mMap;
 
-
-
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitud_aprobada_usuarioti);
-        setBottomNavigationView();
+
 
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -101,25 +99,7 @@ public class solicitud_aprobada_usuarioti extends AppCompatActivity implements O
 
 
 
-    public void setBottomNavigationView(){
-        bottomNavigationView = findViewById(R.id.bottomNavigationUsuario);
-        bottomNavigationView.clearAnimation();
-        bottomNavigationView.setSelectedItemId(R.id.solicitudes);
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.listado_equipos:
-                        startActivity(new Intent(solicitud_aprobada_usuarioti.this, listadoEquiposUsuario.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.solicitudes:
-                        return true;
-                }
-                return false;
-            }
-        });
-    }
+
 
 
 }
