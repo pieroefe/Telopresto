@@ -181,30 +181,6 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-
-
-    /*    if (listaId.isEmpty()){
-            listaId.add("0");
-        }
-
-        int contador= listaId.size()-1;
-        for(int i=contador;i<listaId.size();i++){
-            equipo.setId(String.valueOf(i+1));
-
-
-        }
-        listaId.add(String.valueOf(contador+1));
-
-     */
-
-
-       /* opcionOtro.setText("");
-        caracteristicasDispositivo.setText("");
-        incluyeDispositivo.setText("");
-        stockDispositivo.setText("");
-        marcaDispositivo.setText("");
-
-        */
     }
 
 

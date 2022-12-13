@@ -290,11 +290,14 @@ public class PerfilUsuarioTI extends AppCompatActivity {
                     case R.id.perfilUsuarioTI:
                         return true;
                     case R.id.listado_equipos:
-                        startActivity(new Intent(PerfilUsuarioTI.this, listadoEquiposUsuario.class));
-                        overridePendingTransition(0,0);
+                        Intent intent = new Intent(PerfilUsuarioTI.this,listadoEquiposUsuario.class);
+                        intent.putExtra("key",id);
+                        startActivity(intent);
                         return true;
                     case R.id.solicitudes:
-                        startActivity(new Intent(PerfilUsuarioTI.this,listaSolicitudesUsuario.class));
+                        Intent intent1 = new Intent(PerfilUsuarioTI.this,listaSolicitudesUsuario.class);
+                        intent1.putExtra("key2",id);
+                        startActivity(intent1);
                 }
                 return false;
             }
