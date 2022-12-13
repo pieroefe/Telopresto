@@ -81,6 +81,7 @@ public class Adapter_ListaUsuariosTI extends RecyclerView.Adapter<Adapter_ListaU
         Usuario u = usuariosListar.get(position);
         ImageView imageView = holder.itemView.findViewById(R.id.iv_foto_TI);
         TextView textView = holder.itemView.findViewById(R.id.tv_nombre_usuarioti);
+        Glide.with(holder.itemView.getContext()).load(u.getFilename()).into(imageView);
 
         Button editar = holder.itemView.findViewById(R.id.btn_edit_usuarioTi);
         Button eliminar = holder.itemView.findViewById(R.id.btn_delete_usuarioTi);
