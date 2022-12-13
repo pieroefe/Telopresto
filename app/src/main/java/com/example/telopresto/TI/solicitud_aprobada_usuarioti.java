@@ -12,7 +12,10 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 
+import com.example.telopresto.Cliente.Cliente_solicitudes;
+import com.example.telopresto.Cliente.agregarSolicitud;
 import com.example.telopresto.R;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -38,7 +41,13 @@ public class solicitud_aprobada_usuarioti extends AppCompatActivity implements O
         setContentView(R.layout.activity_solicitud_aprobada_usuarioti);
 
 
+        Button btnContinuar = (Button) findViewById(R.id.btnContinuar);
 
+        btnContinuar.setOnClickListener(view -> {
+
+            Intent intent = new Intent(solicitud_aprobada_usuarioti.this, Cliente_solicitudes.class);
+            startActivity(intent);
+        });
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
