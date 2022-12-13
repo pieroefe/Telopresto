@@ -140,18 +140,29 @@ public class agregarSolicitud extends AppCompatActivity {
         solicitud.setEstado("Pendiente");
 
 
-        refSoli.child(id).setValue(solicitud).addOnSuccessListener(unused -> {
-            Toast.makeText(agregarSolicitud.this, "Solicitud enviada", Toast.LENGTH_SHORT).show();
-            Intent intent2 = new Intent(agregarSolicitud.this, Cliente_lista.class);
-            intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        });
+        if(motivoText.getText().toString().equals("") || cursoText.getText().toString().equals("") ||
+                tiempoText.getText().toString().equals("")||programasText.getText().toString().equals("") || spinner.getSelectedItem().toString().equals("")||
+                spinner2.getSelectedItem().toString().equals("") ||  otroText.getText().toString().equals("")
 
+        ){
+            Toast.makeText(agregarSolicitud.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
 
-        motivoText.setText("");
-        tiempoText.setText("");
-        cursoText.setText("");
-        programasText.setText("");
-        otroText.setText("");
+        }else{
+
+            firebaseDatabase = FirebaseDatabase.getInstance();
+            DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
+
+            refSoli.child(id).setValue(solicitud).addOnSuccessListener(unused -> {
+                Toast.makeText(agregarSolicitud.this, "Solicitud enviada", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(agregarSolicitud.this, Cliente_lista.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            });
+            motivoText.setText("");
+            tiempoText.setText("");
+            cursoText.setText("");
+            programasText.setText("");
+            otroText.setText("");
+        }
 
 
     }

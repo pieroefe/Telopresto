@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
@@ -32,6 +33,7 @@ public class listadoAlumnoAdmin extends AppCompatActivity {
 
 
     private List<Usuario> clienteList = new ArrayList<Usuario>();
+    SearchView searchView;
 
 
 
