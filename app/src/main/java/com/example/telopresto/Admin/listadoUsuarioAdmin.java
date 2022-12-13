@@ -62,7 +62,7 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
 
 
     public void getItems(){
-        firebaseDatabase.getReference().child("usuario").addValueEventListener(new ValueEventListener() {
+        firebaseDatabase.getReference().child("usuario").orderByChild("rol").equalTo("usuarioTI").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot children : snapshot.getChildren()){
