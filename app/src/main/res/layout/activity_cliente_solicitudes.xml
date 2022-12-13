@@ -27,40 +27,33 @@
         android:layout_height="547dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationCliente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_sol"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_sol" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/azul"
-        android:layout_marginTop="670dp"
         app:itemIconTint="@color/amarillo"
         app:labelVisibilityMode="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_cliente" />
 
     <Button
         android:id="@+id/agregarSolicitudesBtn"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/boton_redondo"
         android:drawableTop="@drawable/add_item2"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/rv_solicitudes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

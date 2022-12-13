@@ -188,8 +188,9 @@ public class listadoEquiposUsuario extends AppCompatActivity {
                     case R.id.listado_equipos:
                         return true;
                     case R.id.solicitudes:
-                        startActivity(new Intent(listadoEquiposUsuario.this, listaSolicitudesUsuario.class));
-                        overridePendingTransition(0,0);
+                        Intent intent = new Intent(listadoEquiposUsuario.this, listaSolicitudesUsuario.class);
+                        intent.putExtra("key2",id);
+                        startActivity(intent);
                         return true;
                     case R.id.perfilUsuarioTI:
                         Intent intent1 = new Intent(listadoEquiposUsuario.this, PerfilUsuarioTI.class);

@@ -23,6 +23,7 @@ import com.example.telopresto.Admin.listadoAlumnoAdmin;
 import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.TI.agregar_equipo_usaurioti;
+import com.example.telopresto.TI.listaSolicitudesUsuario;
 import com.example.telopresto.TI.listadoEquiposUsuario;
 import com.example.telopresto.dto.Equipo;
 
@@ -49,6 +50,7 @@ public class Cliente_lista extends AppCompatActivity {
     DatabaseReference ref1;
     FirebaseAuth mAuth;
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    String id;
 
     BottomNavigationView bottomNavigationView;
 
@@ -59,7 +61,7 @@ public class Cliente_lista extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_lista);
         setBottomNavigationView();
-
+        id =  getIntent().getStringExtra("key");
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -173,12 +175,14 @@ public class Cliente_lista extends AppCompatActivity {
                     case R.id.equipos_cliente:
                         return true;
                     case R.id.solicitudes_cliente:
-                        startActivity(new Intent(Cliente_lista.this, Cliente_solicitudes.class));
-                        overridePendingTransition(0,0);
+                        Intent intent = new Intent(Cliente_lista.this, Cliente_solicitudes.class);
+                        intent.putExtra("key2",id);
+                        startActivity(intent);
                         return true;
                     case R.id.reservas_menu:
-                        startActivity(new Intent(Cliente_lista.this, Cliente_reserva.class));
-                        overridePendingTransition(0,0);
+                        Intent intent1 = new Intent(Cliente_lista.this, Cliente_reserva.class);
+                        intent1.putExtra("key2",id);
+                        startActivity(intent1);
                         return true;
                 }
                 return false;

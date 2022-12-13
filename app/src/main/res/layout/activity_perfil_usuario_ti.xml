@@ -11,12 +11,12 @@
         android:id="@+id/nombre_editable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Perfil"
+        android:text="¡Hola!"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,13 +105,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/azul"
-        android:layout_marginTop="670dp"
         app:itemIconTint="@color/amarillo"
         app:labelVisibilityMode="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_usuarioti" />
 
 

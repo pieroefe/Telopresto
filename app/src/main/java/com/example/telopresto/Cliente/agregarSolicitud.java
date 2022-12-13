@@ -36,6 +36,7 @@ public class agregarSolicitud extends AppCompatActivity {
 
     Spinner spinner, spinner2;
     String img;
+    String id;
 
     ArrayList<Equipo> listaEquipos;
     ArrayList<String> listaUrl;
@@ -47,6 +48,8 @@ public class agregarSolicitud extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_solicitud_cliente);
+        id =  getIntent().getStringExtra("key");
+
 
 
 

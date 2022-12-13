@@ -109,8 +109,8 @@ public class Solicitudes_detalle extends AppCompatActivity {
         solicitud.put("tiempoDeSolicitud", tiempoText.getText().toString());
 
       */
-
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario").child(user.getUid());
+        System.out.println(user.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("solicitudes").child(user.getUid());
         DatabaseReference ref1  = databaseReference;
 
 
@@ -129,9 +129,10 @@ public class Solicitudes_detalle extends AppCompatActivity {
 
     }
     public void rechazar(View view){
-        Intent intent = new Intent(Solicitudes_detalle.this, MotivoSolicitudRechaza.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent intent = new Intent(Solicitudes_detalle.this, Solicitudes_detalle.class);
+        intent.putExtra("idEquipo3", id);
         startActivity(intent);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     }
 
     public boolean onCreateOptionsMenu(Menu menu){

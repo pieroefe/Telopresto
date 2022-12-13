@@ -42,7 +42,7 @@ import java.util.Objects;
 public class PerfilUsuarioTI extends AppCompatActivity {
 
     ImageView imageView;
-    TextView uid, tv_nombre_edit, tv_correo_edit, tv_codigo_edit;
+    TextView uid, tv_nombre_edit, tv_correo_edit, tv_codigo_edit, titulo_perfil;
     Button btn_editarfoto, btn_eliminar;
 
     FirebaseDatabase firebaseDatabase;
@@ -66,8 +66,10 @@ public class PerfilUsuarioTI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario_ti);
         setBottomNavigationView();
+        id = getIntent().getStringExtra("key2");
 
         imageView = findViewById(R.id.imageView45);
+        titulo_perfil = findViewById(R.id.nombre_editable);
         tv_correo_edit = findViewById(R.id.tv_correo_edit);
         tv_codigo_edit = findViewById(R.id.tv_codigo_edit);
 
