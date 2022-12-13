@@ -68,13 +68,10 @@
         </activity>
         <activity
             android:name=".WhatIs"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
-
 
         </activity>
         <activity
@@ -131,23 +128,21 @@
         </activity>
         <activity
             android:name=".TI.solicitud_aprobada_usuarioti"
-            android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
             <meta-data
-
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyBWGqic7XbnCf6lEYTyTJmi_RUvmItxn9E" />/>
         </activity>
         <activity
             android:name=".TI.listaSolicitudesUsuario"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".TI.editar_equipo_usuarioti"
@@ -186,6 +181,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
         </activity>
         <activity
             android:name=".Cliente.Cliente_reserva"
@@ -214,7 +210,7 @@
         </activity>
         <activity
             android:name=".SplashSreen"
-            android:exported="true"
+            android:exported="false"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
             <meta-data
                 android:name="android.app.lib_name"
