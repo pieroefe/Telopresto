@@ -143,10 +143,6 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.usuarios_menu:
                         return true;
-//                    case R.id.reportes:
-//                        startActivity(new Intent(listadoUsuarioAdmin.this, reportesAdmin.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
                     case R.id.alumno_menu:
                         startActivity(new Intent(listadoUsuarioAdmin.this, listadoAlumnoAdmin.class));
                         overridePendingTransition(0,0);
@@ -157,20 +153,14 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
         });
     }
 
-    public void accionCerrarSesion(MenuItem item){
+    public void accionCerrarSesion(MenuItem item) {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(listadoUsuarioAdmin.this, Login_principal.class));
-
-
-
+        Intent intent2 = new Intent (listadoUsuarioAdmin.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
     }
-
-
-
-
-
 
 
 

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.telopresto.Admin.listadoUsuarioAdmin;
 import com.example.telopresto.Cliente.Cliente_solicitudes;
 import com.example.telopresto.Cliente.listaSolicitudesAdapter;
 import com.example.telopresto.Login_principal;
@@ -114,7 +115,9 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(listaSolicitudesUsuario.this, Login_principal.class));
+        Intent intent2 = new Intent(listaSolicitudesUsuario.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
 
 
 

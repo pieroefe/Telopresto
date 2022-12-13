@@ -144,7 +144,9 @@ public class Cliente_solicitudes extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(Cliente_solicitudes.this, Login_principal.class));
+        Intent intent2 = new Intent(Cliente_solicitudes.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
 
 
 

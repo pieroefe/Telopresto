@@ -160,27 +160,36 @@ public class agregar_equipo_usaurioti extends AppCompatActivity {
         usuario.put("incluye", incluyeDispositivo.getText().toString());
         usuario.put("marca", marcaDispositivo.getText().toString());
         usuario.put("stock", stockDispositivo.getText().toString());
-        usuario.put("tipo",  spinner.getSelectedItem().toString());
-        if(spinner.getSelectedItem().toString().equals("Otro")){
+        usuario.put("tipo", spinner.getSelectedItem().toString());
+
+        if (spinner.getSelectedItem().toString().equals("Otro")) {
             usuario.put("tipo", opcionOtro.getText().toString());
             listaMarcas.add(opcionOtro.getText().toString());
 
-        }else{
+        } else {
             usuario.put("tipo", spinner.getSelectedItem().toString());
         }
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref1  = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
+        if (equipo.getUrl() == null || caracteristicasDispositivo.getText().toString().equals("") || incluyeDispositivo.getText().toString().equals("") ||
+                marcaDispositivo.getText().toString().equals("") || stockDispositivo.getText().toString().equals("") || spinner.getSelectedItem().toString().equals("")) {
 
-        ref1.child(id).updateChildren(usuario).addOnSuccessListener(new OnSuccessListener() {
-            @Override
-            public void onSuccess(Object o) {
-                Toast.makeText(agregar_equipo_usaurioti.this, "Guardado correctamente", Toast.LENGTH_SHORT).show();
-                Intent intent2 = new Intent(agregar_equipo_usaurioti.this, listadoEquiposUsuario.class);
-                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent2);
-            }
-        });
+            Toast.makeText(agregar_equipo_usaurioti.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            firebaseDatabase = FirebaseDatabase.getInstance();
+            DatabaseReference ref1 = firebaseDatabase.getReference().child("usuarioTI").child("listaEquipos");
+
+            ref1.child(id).updateChildren(usuario).addOnSuccessListener(new OnSuccessListener() {
+                @Override
+                public void onSuccess(Object o) {
+                    Toast.makeText(agregar_equipo_usaurioti.this, "Guardado correctamente", Toast.LENGTH_SHORT).show();
+                    Intent intent2 = new Intent(agregar_equipo_usaurioti.this, listadoEquiposUsuario.class);
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent2);
+                }
+            });
+        }
     }
 
 

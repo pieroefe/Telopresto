@@ -202,7 +202,9 @@ public class Cliente_lista extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(Cliente_lista.this, Login_principal.class));
+        Intent intent2 = new Intent(Cliente_lista.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
 
 
 

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.telopresto.Admin.listadoUsuarioAdmin;
 import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -82,7 +83,9 @@ public class MotivoSolicitudRechaza extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(MotivoSolicitudRechaza.this, Login_principal.class));
+        Intent intent2 = new Intent(MotivoSolicitudRechaza.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
 
 
 

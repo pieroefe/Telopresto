@@ -13,15 +13,23 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Telopresto"
         tools:targetApi="31">
+
     <meta-data
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyBWGqic7XbnCf6lEYTyTJmi_RUvmItxn9E" />
+
+
+
+
+
         <activity
             android:name=".TI.PerfilUsuarioTI"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
+
         </activity>
         <activity
             android:name=".TI.MotivoSolicitudRechaza"
@@ -169,7 +177,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".Cliente.Cliente_reserva"
@@ -199,7 +206,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".MainActivity"

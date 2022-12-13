@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.telopresto.Admin.listadoUsuarioAdmin;
 import com.example.telopresto.Cliente.Cliente_detalles;
 import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
@@ -316,7 +317,9 @@ public class PerfilUsuarioTI extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(PerfilUsuarioTI.this, Login_principal.class));
+        Intent intent2 = new Intent(PerfilUsuarioTI.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
 
 
 

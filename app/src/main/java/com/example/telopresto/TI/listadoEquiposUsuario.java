@@ -19,6 +19,7 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.telopresto.Admin.listadoUsuarioAdmin;
 import com.example.telopresto.Cliente.Cliente_solicitudes_detalles;
 import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
@@ -214,7 +215,9 @@ public class listadoEquiposUsuario extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(listadoEquiposUsuario.this, Login_principal.class));
+        Intent intent2 = new Intent(listadoEquiposUsuario.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
 
 
 

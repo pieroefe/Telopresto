@@ -141,7 +141,9 @@ public class listadoAlumnoAdmin extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(listadoAlumnoAdmin.this, Login_principal.class));
+        Intent intent2 = new Intent(listadoAlumnoAdmin.this, Login_principal.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent2);
 
 
 
