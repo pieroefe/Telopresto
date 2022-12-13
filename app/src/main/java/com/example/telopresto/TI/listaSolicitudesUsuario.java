@@ -38,11 +38,13 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
     BottomNavigationView bottomNavigationView;
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitudes_usuarioti);
         setBottomNavigationView();
+        id = getIntent().getStringExtra("key2");
 
 
         solicitudes = new ArrayList<>();
@@ -84,14 +86,16 @@ public class listaSolicitudesUsuario extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.listado_equipos:
-                        startActivity(new Intent(listaSolicitudesUsuario.this, listadoEquiposUsuario.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                        Intent intent = new Intent(listaSolicitudesUsuario.this, listadoEquiposUsuario.class);
+                        intent.putExtra("key",id);
+                        startActivity(intent);
                     case R.id.solicitudes:
                         return true;
 
                     case R.id.perfilUsuarioTI:
-                        startActivity(new Intent(listaSolicitudesUsuario.this,PerfilUsuarioTI.class));
+                        Intent intent1 = new Intent(listaSolicitudesUsuario.this, PerfilUsuarioTI.class);
+                        intent1.putExtra("key2",id);
+                        startActivity(intent1);
                 }
                 return false;
             }

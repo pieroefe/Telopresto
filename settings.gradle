@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 rootProject.name = "Telopresto"
 include ':app'
 include ':openCV'
+include ':sdk'
+
 include ':openCV'

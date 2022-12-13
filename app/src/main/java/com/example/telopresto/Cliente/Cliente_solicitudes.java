@@ -17,6 +17,7 @@ import android.widget.Button;
 import com.example.telopresto.Login_principal;
 import com.example.telopresto.R;
 import com.example.telopresto.TI.agregar_equipo_usaurioti;
+import com.example.telopresto.TI.listaSolicitudesUsuario;
 import com.example.telopresto.TI.listadoEquiposUsuario;
 import com.example.telopresto.dto.Equipo;
 import com.example.telopresto.dto.Solicitud;
@@ -43,18 +44,21 @@ public class Cliente_solicitudes extends AppCompatActivity {
     FirebaseUser user;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_solicitudes);
         setBottomNavigationView();
+        id =  getIntent().getStringExtra("key2");
 
         Button btnAgregar = (Button) findViewById(R.id.agregarSolicitudesBtn);
 
         btnAgregar.setOnClickListener(view -> {
 
             Intent intent = new Intent(Cliente_solicitudes.this, agregarSolicitud.class);
+            intent.putExtra("key",id);
             startActivity(intent);
         });
 
@@ -111,14 +115,16 @@ public class Cliente_solicitudes extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.equipos_cliente:
-                        startActivity(new Intent(Cliente_solicitudes.this, Cliente_lista.class));
-                        overridePendingTransition(0,0);
+                        Intent intent = new Intent(Cliente_solicitudes.this, Cliente_lista.class);
+                        intent.putExtra("key",id);
+                        startActivity(intent);
                         return true;
                     case R.id.solicitudes_cliente:
                         return true;
                     case R.id.reservas_menu:
-                        startActivity(new Intent(Cliente_solicitudes.this, Cliente_reserva.class));
-                        overridePendingTransition(0,0);
+                        Intent intent1 = new Intent(Cliente_solicitudes.this, Cliente_reserva.class);
+                        intent1.putExtra("key2",id);
+                        startActivity(intent1);
                         return true;
                 }
                 return false;

@@ -40,11 +40,14 @@ public class Cliente_reserva extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
 
+    String id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_reserva);
         setBottomNavigationView();
+        id =  getIntent().getStringExtra("key2");
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
@@ -96,12 +99,14 @@ public class Cliente_reserva extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.equipos_cliente:
-                        startActivity(new Intent(Cliente_reserva.this, Cliente_lista.class));
-                        overridePendingTransition(0,0);
+                        Intent intent = new Intent(Cliente_reserva.this, Cliente_lista.class);
+                        intent.putExtra("key",id);
+                        startActivity(intent);
                         return true;
                     case R.id.solicitudes_cliente:
-                        startActivity(new Intent(Cliente_reserva.this, Cliente_solicitudes.class));
-                        overridePendingTransition(0,0);
+                        Intent intent1 = new Intent(Cliente_reserva.this, Cliente_solicitudes.class);
+                        intent1.putExtra("key2",id);
+                        startActivity(intent1);
                         return true;
                     case R.id.reservas_menu:
                         return true;
