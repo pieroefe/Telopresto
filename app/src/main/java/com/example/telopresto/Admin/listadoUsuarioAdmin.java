@@ -143,10 +143,10 @@ public class listadoUsuarioAdmin extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.usuarios_menu:
                         return true;
-                    case R.id.reportes:
-                        startActivity(new Intent(listadoUsuarioAdmin.this, reportesAdmin.class));
-                        overridePendingTransition(0,0);
-                        return true;
+//                    case R.id.reportes:
+//                        startActivity(new Intent(listadoUsuarioAdmin.this, reportesAdmin.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
                     case R.id.alumno_menu:
                         startActivity(new Intent(listadoUsuarioAdmin.this, listadoAlumnoAdmin.class));
                         overridePendingTransition(0,0);

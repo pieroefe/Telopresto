@@ -6,10 +6,10 @@
         android:icon="@drawable/usario"
         android:title="Usuarios TI" />
 
-    <item
-        android:id="@+id/reportes"
-        android:icon="@drawable/report2"
-        android:title="Reportes" />
+<!--    <item-->
+<!--        android:id="@+id/reportes"-->
+<!--        android:icon="@drawable/report2"-->
+<!--        android:title="Reportes" />-->
 
     <item
         android:id="@+id/alumno_menu"

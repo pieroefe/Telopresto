@@ -35,10 +35,10 @@ public class edit_usuario_admin extends AppCompatActivity {
                         startActivity(new Intent(edit_usuario_admin.this, listadoUsuarioAdmin.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.reportes:
-                        startActivity(new Intent(edit_usuario_admin.this, reportesAdmin.class));
-                        overridePendingTransition(0,0);
-                        return true;
+//                    case R.id.reportes:
+//                        startActivity(new Intent(edit_usuario_admin.this, reportesAdmin.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
                     case R.id.alumno_menu:
                         startActivity(new Intent(edit_usuario_admin.this, listadoAlumnoAdmin.class));
                         overridePendingTransition(0,0);

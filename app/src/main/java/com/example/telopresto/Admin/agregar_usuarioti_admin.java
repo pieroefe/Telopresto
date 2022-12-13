@@ -135,8 +135,8 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
                         imageReference.putFile(imageUri).addOnSuccessListener(taskSnapshot ->
                                 Log.d("msg","Archivo Subido correctamente")).addOnFailureListener(e->Log.d("msg","Error",e.getCause()));
                     }
-                    databaseReference.child(usuarioEditar.getKey()).child("correo").setValue(correo.getText().toString());
-                    databaseReference.child(usuarioEditar.getKey()).child("codigo").setValue(codigo.getText().toString());
+//                    databaseReference.child(usuarioEditar.getKey()).child("correo").setValue(correo.getText().toString());
+//                    databaseReference.child(usuarioEditar.getKey()).child("codigo").setValue(codigo.getText().toString());
                     databaseReference.child(usuarioEditar.getKey()).child("filename").setValue(imageUri!=null?filename:usuarioEditar.getFilename());
 
                     Toast.makeText(agregar_usuarioti_admin.this, "Actualizado correctamente", Toast.LENGTH_SHORT).show();
@@ -635,10 +635,10 @@ public class agregar_usuarioti_admin extends AppCompatActivity {
                         startActivity(new Intent(agregar_usuarioti_admin.this, listadoUsuarioAdmin.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.reportes:
-                        startActivity(new Intent(agregar_usuarioti_admin.this, reportesAdmin.class));
-                        overridePendingTransition(0,0);
-                        return true;
+//                    case R.id.reportes:
+//                        startActivity(new Intent(agregar_usuarioti_admin.this, reportesAdmin.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
                     case R.id.alumno_menu:
                         startActivity(new Intent(agregar_usuarioti_admin.this, listadoAlumnoAdmin.class));
                         overridePendingTransition(0,0);

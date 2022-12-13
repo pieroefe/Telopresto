@@ -43,7 +43,7 @@ public class reportesAdmin extends AppCompatActivity {
     public void setBottomNavigationView_Reportes(){
         bottomNavigationView = findViewById(R.id.bottomNavigationAdmminReporte);
         bottomNavigationView.clearAnimation();
-        bottomNavigationView.setSelectedItemId(R.id.reportes);
+//        bottomNavigationView.setSelectedItemId(R.id.reportes);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -52,8 +52,8 @@ public class reportesAdmin extends AppCompatActivity {
                         startActivity(new Intent(reportesAdmin.this, listadoUsuarioAdmin.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.reportes:
-                        return true;
+//                    case R.id.reportes:
+//                        return true;
                     case R.id.alumno_menu:
                         startActivity(new Intent(reportesAdmin.this, listadoAlumnoAdmin.class));
                         overridePendingTransition(0,0);
